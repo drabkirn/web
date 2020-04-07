@@ -4,6 +4,8 @@ test:
   db_password:
   db_name:
 
+  mailer_default_email_address:
+
 
 development:
   db_hostname:
@@ -11,9 +13,13 @@ development:
   db_password:
   db_name:
 
+  mailer_default_email_address:
+
 
 production:
   db_hostname:
   db_username:
   db_password:
   db_name:
+
+  mailer_default_email_address:
