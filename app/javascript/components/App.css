@@ -1,0 +1,50 @@
+/* Global app specific CSS code */
+
+/* MAINHEADER START */
+.dbk-header-intro-dsk-content h1 {
+  font-size: 4em;
+}
+/* MAINHEADER END */
+
+
+
+/* Homepage START */
+.section-explain {
+  height: 250px;
+}
+
+.section-explain .col-dsk-4, .section-explain .col-dsk-8 {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mission-image {
+  background: var(--light-white-color);
+}
+
+.vision-image {
+  background: var(--light-white-color);
+  width: 180px;
+  height: 180px;
+}
+/* Homepage END */
+
+
+
+/* Global others START */
+/* Large devices: Laptops */
+@media only screen and (min-width: 768px) {
+  .show-on-small-device-only {
+    display: none;
+  }
+}
+
+/* Medium Devices: Tab */
+@media only screen and (max-width: 768px) {
+  .show-on-large-device-only {
+    display: none;
+  }
+}
+/* Global others END */

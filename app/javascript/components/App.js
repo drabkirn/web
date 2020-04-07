@@ -1,10 +1,16 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import Home from './Home/Home';
+
+import 'desityle/build/css/desityle.min.css';
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <h1>Hello world from App.js</h1>
-    </div>
+    <Switch>
+      <Route path="/" component={ Home } />
+    </Switch>
   );
 }
 
