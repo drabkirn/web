@@ -4,11 +4,12 @@
 
 # Drabkirn Web
 
-> This repository serves as our official website to showcase our products and services.
+> This repository serves as our official codebase of our website to showcase our products and services.
 
 <!-- Add languages, CI/CD, main frameworks used from shields.io. Example -->
 [![Ruby 2.7.1](https://img.shields.io/badge/Ruby-v2.7.1-green.svg)](https://www.ruby-lang.org/en/)
 [![Rails 6.0.2.2](https://img.shields.io/badge/Rails-v6.0.2.2-brightgreen.svg)](https://rubyonrails.org/)
+[![React 16.13](https://img.shields.io/badge/React-v16.13-blue.svg)](https://reactjs.org/docs)
 [![Rspec 4.0](https://img.shields.io/badge/RSpec-v4.0-red.svg)](http://rspec.info/)
 [![Issues](https://img.shields.io/github/issues/drabkirn/rails_base.svg)](https://github.com/drabkirn/rails_base/issues)
 [![Issues closed](https://img.shields.io/github/issues-closed/drabkirn/rails_base.svg)](https://github.com/drabkirn/rails_base/issues)
