@@ -10,6 +10,7 @@ test:
   sendgrid_auth_token:
 
   capybara_screenshots_path:
+  ci_true:
 
 
 development:

@@ -20,7 +20,11 @@ require 'rspec/rails'
 
 # Webmock API, Initialize + disallow making internet requests
 require 'webmock/rspec'
-WebMock.disable_net_connect!(allow_localhost: true)
+if ENV["ci_true"]
+  WebMock.disable_net_connect!(allow_localhost: true, allow: 'github.com')
+else
+  WebMock.disable_net_connect!(allow_localhost: true)
+end
 
 # DB Cleaner
 require 'database_cleaner'
