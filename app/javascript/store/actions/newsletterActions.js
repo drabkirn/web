@@ -9,8 +9,10 @@ export const addContactToOurNewsletterList = (csrfToken, firstName, email) => {
     };
 
     const myBody = {
-      "firstName": firstName,
-      "email": email
+      "newsletter" : {
+        "firstName": firstName,
+        "email": email
+      }
     };
 
     const newsletterURL = "/newsletter/subscribe";

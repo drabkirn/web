@@ -18,6 +18,10 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
+# Webmock API, Initialize + disallow making internet requests
+require 'webmock/rspec'
+WebMock.disable_net_connect!
+
 # DB Cleaner
 require 'database_cleaner'
 
@@ -100,5 +104,64 @@ RSpec.configure do |config|
   
   config.after(:each) do
     DatabaseCleaner.clean
+  end
+
+  # Include our custom helpers
+  config.include RequestSpecHelper
+
+  # Capybara Settings
+  config.before(:suite) do
+    Webpacker.compile
+  end
+
+  config.before(:each) do
+    config.include Capybara::DSL
+  end
+
+
+  # Webmock, Stubbing requests
+  config.before(:each) do
+    stub_request(:put, "https://api.sendgrid.com/v3/marketing/contacts").
+      with(
+        body: "{\"list_ids\":[\"test_list\"],\"contacts\":[{\"email\":\"a@b.com\",\"first_name\":\"ABCDE\"}]}",
+        headers: {
+        'Accept'=>'application/json',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'Authorization'=>'Bearer test_token',
+        'Content-Type'=>'application/json',
+        'User-Agent'=>'Drabkirn : Web API : drabkirn@cdadityang.xyz'
+        }).
+      to_return(
+        status: 200,
+        body: {
+          status: 200,
+          message: Message.newsletter_email_subscribed,
+          data: {
+            message: Message.newsletter_email_subscribed
+          }
+        }.to_json.to_s,
+        headers: {}
+      )
+
+      stub_request(:put, "https://api.sendgrid.com/v3/marketing/contacts").
+      with(
+        body: "{\"list_ids\":[\"test_list\"],\"contacts\":[{\"email\":\"a@b.com\",\"first_name\":\"ABCDE\"}]}",
+        headers: {
+        'Accept'=>'application/json',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'Authorization'=>'Bearer invalid_test_token',
+        'Content-Type'=>'application/json',
+        'User-Agent'=>'Drabkirn : Web API : drabkirn@cdadityang.xyz'
+        }).
+      to_return(
+        status: 422,
+        body: {
+          status: 422,
+          errors: {
+            message: Message.newsletter_api_error
+          }
+        }.to_json.to_s,
+        headers: {}
+      )
   end
 end
