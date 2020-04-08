@@ -6,6 +6,9 @@ test:
 
   mailer_default_email_address:
 
+  sendgrid_list_id:
+  sendgrid_auth_token:
+
 
 development:
   db_hostname:
@@ -15,6 +18,9 @@ development:
 
   mailer_default_email_address:
 
+  sendgrid_list_id:
+  sendgrid_auth_token:
+
 
 production:
   db_hostname:
@@ -23,3 +29,6 @@ production:
   db_name:
 
   mailer_default_email_address:
+
+  sendgrid_list_id:
+  sendgrid_auth_token:
