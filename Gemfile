@@ -41,11 +41,13 @@ group :development do
   gem 'bundler-audit', '~> 0.6.1'
 end
 
+# Custom test gems
 group :test do
   gem 'capybara', '~> 3.32', '>= 3.32.1'
   gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
   gem 'webdrivers', '~> 4.2'
   gem 'webmock', '~> 3.8', '>= 3.8.3'
+  gem 'capybara-screenshot', '~> 1.0', '>= 1.0.24'
 end
 
 ## Custom Gems:

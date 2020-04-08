@@ -20,7 +20,7 @@ require 'rspec/rails'
 
 # Webmock API, Initialize + disallow making internet requests
 require 'webmock/rspec'
-WebMock.disable_net_connect!
+WebMock.disable_net_connect!(allow_localhost: true)
 
 # DB Cleaner
 require 'database_cleaner'
@@ -32,6 +32,29 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+# Capybara Settings
+require 'capybara/rspec'
+require 'capybara/dsl'
+require 'capybara-screenshot/rspec'
+
+Capybara.register_driver :firefox do |app|
+  Capybara::Selenium::Driver.new(app, browser: :firefox)
+end
+
+Capybara.server = :puma
+Capybara.server_host = '0.0.0.0'
+Capybara.server_port = 3005
+
+Capybara.default_driver = :firefox
+Capybara.javascript_driver = :firefox
+Capybara.app_host = 'http://127.0.0.1:3005'
+Capybara.default_max_wait_time = 10
+
+Capybara::Screenshot.register_driver(:firefox) do |driver, path|
+  driver.browser.save_screenshot(path)
+end
+Capybara.save_path = ENV["capybara_screenshots_path"]
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

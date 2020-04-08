@@ -9,6 +9,8 @@ test:
   sendgrid_list_id:
   sendgrid_auth_token:
 
+  capybara_screenshots_path:
+
 
 development:
   db_hostname:
