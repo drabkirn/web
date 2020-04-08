@@ -21,7 +21,7 @@ require 'rspec/rails'
 # Webmock API, Initialize + disallow making internet requests
 require 'webmock/rspec'
 if ENV["ci_true"]
-  WebMock.disable_net_connect!(allow_localhost: true, allow: ['github.com', 's3.amazonaws.com'])
+  WebMock.disable_net_connect!(allow_localhost: true, allow: ['github.com', 'github-production-release-asset-2e65be.s3.amazonaws.com'])
 else
   WebMock.disable_net_connect!(allow_localhost: true)
 end
