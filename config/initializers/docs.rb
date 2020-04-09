@@ -1,3 +1,8 @@
+# Autoloading DocsRenderer or any constant will be depreciated
+## in future versions, so we need to require this
+## Reloading will not reboot the app!
+require "#{Rails.root}/app/lib/docs_renderer"
+
 # Get location of all the MD files
 all_md_files = Dir[Dir.pwd + "/app/views/ui/docs/markdown_files/*.md"].sort!
 

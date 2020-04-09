@@ -25,7 +25,7 @@ feature "Drabkirn Homepage - GET /", js: true do
     expect(page).to have_link('Quotes', href: '#')
     expect(page).to have_link('Desityle', href: '#')
     expect(page).to have_link('Authna', href: '#')
-    expect(page).to have_link('Docs', href: '#')
+    expect(page).to have_link('Docs', href: '/docs')
   end
 
   scenario "social-connect section" do
@@ -55,8 +55,8 @@ feature "Drabkirn Homepage - GET /", js: true do
   end
 
   scenario "navigates and shows docs page" do
-    click_on "Docs"
-    expect(page.current_path).to eq "/"
+    visit "/docs"
+    expect(page.current_path).to eq "/docs"
   end
 
   it_behaves_like "Drabkirn Shared Footer Content"

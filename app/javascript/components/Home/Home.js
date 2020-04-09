@@ -82,7 +82,7 @@ function Home() {
           <a href="#" className="btn" target="_blank" rel="noopener noreferrer">Quotes</a>
           <a href="#" className="btn">Desityle</a>
           <a href="#" className="btn">Authna</a>
-          <a href="#" className="btn">Docs</a>
+          <a href="/docs" className="btn">Docs</a>
         </div>
       </section>
 

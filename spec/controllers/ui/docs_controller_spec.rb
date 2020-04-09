@@ -3,9 +3,12 @@ require 'rails_helper'
 RSpec.describe Ui::DocsController, type: :controller do
 
   describe "GET #index" do
-    it "returns http success" do
+    before(:each) do
       get :index
-      expect(response).to have_http_status(:success)
+    end
+
+    it "returns 200 success status from response" do
+      expect(response).to have_http_status(200)
     end
   end
 
