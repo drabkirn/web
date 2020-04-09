@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     end
   end
 
+  # For Rails UI requests only
+  get '/docs', to: "ui/docs#index"
+
   # When making invalid API-only requests, show 404 and 500
   match "/404", to: "application#action_not_found", via: [:all]
   match "/500", to: "application#internal_server_error", via: [:all]

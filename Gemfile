@@ -52,3 +52,4 @@ end
 
 ## Custom Gems:
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'redcarpet', '~> 3.5'
