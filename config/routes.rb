@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/legal/terms_conditions', to: "ui/legal#terms_conditions"
   get '/legal/credits', to: "ui/legal#credits"
   get '/legal/cla', to: "ui/legal#cla"
+  get '/legal/privacy/analytics_opt_out', to: "ui/legal#analytics_opt_out"
 
   # When making invalid API-only requests, show 404 and 500
   match "/404", to: "application#action_not_found", via: [:all]

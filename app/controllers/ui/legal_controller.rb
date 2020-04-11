@@ -26,4 +26,9 @@ class Ui::LegalController < ApplicationController
 
     @body_content = $LEGAL_CLA_BODY_CONTENT.html_safe
   end
+
+  def analytics_opt_out
+    @mainheader_app_name = "Analytics Opt Out"
+    @mainheader_app_info = "Like we said, we care about the privacy of your data and are committed to protecting it. So we give you this option to opt-out of our web analytics. You're a free bird!"
+  end
 end
