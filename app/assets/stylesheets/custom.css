@@ -1,4 +1,5 @@
-ol li ul, ol li p, ul li pre, ul li pre code xmp, ol li pre, ol li pre code xmp {
+ /* GLOBAL START */
+ ol li ul, ol li p, ul li pre, ul li pre code xmp, ol li pre, ol li pre code xmp {
   font-size: 1em !important;
 }
 
@@ -6,4 +7,40 @@ ol li ul, ol li p, ul li pre, ul li pre code xmp, ol li pre, ol li pre code xmp 
   color: var(--light-pink-color);
   font-size: 1em;
   font-family: Courier, 'New Courier', monospace;
+}
+/* GLOBAL END */
+
+
+
+/* LEGAL START */
+.legal-timeline {
+  position: relative;
+}
+
+.legal-timeline .legal-timeline-updated-on {
+  position: absolute;
+  right: 0;
+}
+/* LEGAL END */
+
+
+
+/* Media Queries */
+/* Tab Devices and down */
+@media only screen and (max-width: 768px) {
+  /* Legal START */
+  .legal-timeline {
+    position: static;
+    text-align: center;
+  }
+  
+  .legal-timeline .legal-timeline-updated-on {
+    position: static;
+  }
+
+  .legal-timeline .legal-timeline-updated-on::before { 
+    content: "\A\A"; 
+    white-space: pre; 
+  }
+  /* Legal END */
 }

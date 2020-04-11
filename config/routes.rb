@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   # For Rails UI requests only
   get '/docs', to: "ui/docs#index"
+  get '/legal/privacy_policy', to: "ui/legal#privacy_policy"
+  get '/legal/terms_conditions', to: "ui/legal#terms_conditions"
+  get '/legal/credits', to: "ui/legal#credits"
+  get '/legal/cla', to: "ui/legal#cla"
 
   # When making invalid API-only requests, show 404 and 500
   match "/404", to: "application#action_not_found", via: [:all]
