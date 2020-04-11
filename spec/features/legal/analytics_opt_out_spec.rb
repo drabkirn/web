@@ -14,10 +14,15 @@ feature "Legal Analytics Opt Out - GET /legal/privacy/analytics_opt_out" do
 
   scenario "main section content" do
     expect(page).to have_selector('iframe')
+
+    # Navigation links/btns
+    expect(page).to have_link('Back', href: '/legal/privacy_policy')
   end
 
-  scenario "shows navigation links in form of buttons" do
-    expect(page).to have_link('Back', href: '/legal/privacy_policy')
+  # Navigate to respective pages on click - internal only
+  scenario "navigates and shows home page" do
+    click_on "Back"
+    expect(page.current_path).to eq "/legal/privacy_policy"
   end
 
   it_behaves_like "Drabkirn Shared Footer Content"

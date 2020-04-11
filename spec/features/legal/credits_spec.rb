@@ -14,10 +14,14 @@ feature "Legal Credits - GET /legal/credits" do
 
   scenario "main section content" do
     expect(page).to have_selector('p', text: /At Drabkirn, We use the following free services/)
+    # Navigation links/btns
+    expect(page).to have_link('Back', href: '/')
   end
 
-  scenario "shows navigation links in form of buttons" do
-    expect(page).to have_link('Back', href: '/')
+  # Navigate to respective pages on click - internal only
+  scenario "navigates and shows home page" do
+    click_on "Back"
+    expect(page.current_path).to eq "/"
   end
 
   it_behaves_like "Drabkirn Shared Footer Content"

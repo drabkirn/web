@@ -27,6 +27,17 @@ feature "Docs - GET /docs" do
     expect(page).to have_selector('li[data-href="#desityle-usage"]', text: "Usage", visible: false)
     expect(page).to have_selector('ol.ol-toc-nested li', text: "Development Installation", visible: false)
     expect(page).to have_selector('li[data-href="#desityle-di"]', text: "Development Installation", visible: false)
+
+    
+    ## This at last
+    # Navigation links/btns
+    expect(page).to have_link('Back', href: '/')
+  end
+
+  # Navigate to respective pages on click - internal only
+  scenario "navigates and shows home page" do
+    click_on "Back"
+    expect(page.current_path).to eq "/"
   end
 
   it_behaves_like "Drabkirn Shared Footer Content"

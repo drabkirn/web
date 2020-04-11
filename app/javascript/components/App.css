@@ -34,6 +34,10 @@
 
 
 /* Global others START */
+.field-explanation {
+  font-size: 1em;
+}
+
 /* Large devices: Laptops */
 @media only screen and (min-width: 768px) {
   .show-on-small-device-only {
