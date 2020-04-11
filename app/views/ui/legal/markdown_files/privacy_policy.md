@@ -1,4 +1,3 @@
-<!-- Intro content -->
 This policy explains what information we collect about you and why, what we do with that information, and how we handle that information.
 
 <br />

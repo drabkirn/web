@@ -17,6 +17,9 @@ class MarkdownRenderer < Redcarpet::Render::HTML
       elsif contents.match /^(<li>\(ollowerroman\))/
         contents = contents.gsub(/(\(ollowerroman\))/, "")
         return %(<ol class="ol-lower-roman">#{contents}</ol>)
+      elsif contents.match /^(<li>\(olupperlatin\))/
+        contents = contents.gsub(/(\(olupperlatin\))/, "")
+        return %(<ol class="ol-upper-roman">#{contents}</ol>)
       else
         return %(<ol>#{contents}</ol>)
       end
