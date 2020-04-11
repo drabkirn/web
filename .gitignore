@@ -35,3 +35,6 @@ yarn-debug.log*
 
 # Ignore tests coverage
 /coverage
+
+# Ignore /desityle folder, we'll build it in own app
+/public/desityle
