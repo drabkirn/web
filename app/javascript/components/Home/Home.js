@@ -81,7 +81,7 @@ function Home() {
           <a href="https://cdadityang.xyz" className="btn" target="_blank" rel="noopener noreferrer">Aditya</a>
           <a href="#" className="btn" target="_blank" rel="noopener noreferrer">Quotes</a>
           <a href="/desityle" className="btn">Desityle</a>
-          <a href="#" className="btn">Authna</a>
+          <Link to="/authna" className="btn">Authna</Link>
           <a href="/docs" className="btn">Docs</a>
         </div>
       </section>

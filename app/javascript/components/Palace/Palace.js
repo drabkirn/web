@@ -26,7 +26,7 @@ function Palace() {
             <div className="align-center mt-20">
               <a href="#" className="btn">Quotes</a>
               <a href="/desityle" className="btn">Desityle</a>
-              <a href="#" className="btn">Authna</a>
+              <Link to="/authna" className="btn">Authna</Link>
             </div>
           </div>
         </div>

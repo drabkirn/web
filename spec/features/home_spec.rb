@@ -24,7 +24,7 @@ feature "Drabkirn Homepage - GET /", js: true do
     expect(page).to have_link('Aditya', href: 'https://cdadityang.xyz')
     expect(page).to have_link('Quotes', href: '#')
     expect(page).to have_link('Desityle', href: '/desityle')
-    expect(page).to have_link('Authna', href: '#')
+    expect(page).to have_link('Authna', href: '/authna')
     expect(page).to have_link('Docs', href: '/docs')
   end
 
@@ -51,7 +51,7 @@ feature "Drabkirn Homepage - GET /", js: true do
 
   scenario "navigates and shows authna page" do
     click_on "Authna"
-    expect(page.current_path).to eq "/"
+    expect(page.current_path).to eq "/authna"
   end
 
   scenario "navigates and shows docs page" do

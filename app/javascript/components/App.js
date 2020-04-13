@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './Home/Home';
 import Newsletter from './Newsletter/Newsletter';
 import Palace from './Palace/Palace';
+import Authna from './Authna/Authna';
 
 import 'desityle/build/css/desityle.min.css';
 import './App.css';
@@ -13,6 +14,7 @@ function App() {
     <Switch>
       <Route exact path="/newsletter" component={ Newsletter } />
       <Route exact path="/palace" component={ Palace } />
+      <Route exact path="/authna" component={ Authna } />
       <Route path="/" component={ Home } />
     </Switch>
   );
