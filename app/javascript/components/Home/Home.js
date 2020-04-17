@@ -79,7 +79,7 @@ function Home() {
 
         <div className="mt-30 align-center">
           <a href="https://cdadityang.xyz" className="btn" target="_blank" rel="noopener noreferrer">Aditya</a>
-          <a href="#" className="btn" target="_blank" rel="noopener noreferrer">Quotes</a>
+          <Link to="/quotes" className="btn">Quotes</Link>
           <a href="/desityle" className="btn">Desityle</a>
           <Link to="/authna" className="btn">Authna</Link>
           <a href="/docs" className="btn">Docs</a>

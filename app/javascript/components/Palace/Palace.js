@@ -24,7 +24,7 @@ function Palace() {
             <h2>Apps:</h2>
             <p className="field-explanation">Here are some of the great things that we've built:</p>
             <div className="align-center mt-20">
-              <a href="#" className="btn">Quotes</a>
+              <Link to="/quotes" className="btn">Quotes</Link>
               <a href="/desityle" className="btn">Desityle</a>
               <Link to="/authna" className="btn">Authna</Link>
             </div>

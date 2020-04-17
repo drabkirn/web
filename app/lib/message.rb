@@ -9,6 +9,15 @@ class Message
     "Exception: You've not included a valid Accept header in your request"
   end
 
+  # Quotes messages
+  def self.quotes_index_loaded
+    "All Drabkirn Quotes loaded successfully"
+  end
+
+  def self.quote_show_loaded(id)
+    "Drabkirn Quote with #{id} loaded successfully"
+  end
+
   # System messages
   def self.action_not_found(record = 'record')
     "Error: Requested #{record} not found"

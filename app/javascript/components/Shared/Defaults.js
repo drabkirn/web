@@ -1,0 +1,1 @@
+export const DRABKRIN_QUOTES_BASE_URL = "https://drabkirn.cdadityang.xyz/quotes";

@@ -22,7 +22,7 @@ feature "Drabkirn Homepage - GET /", js: true do
     # Navigation buttons + statement
     expect(page).to have_selector('p.fs-1-6', text: /We know our motto, mission, and vision are vague/)
     expect(page).to have_link('Aditya', href: 'https://cdadityang.xyz')
-    expect(page).to have_link('Quotes', href: '#')
+    expect(page).to have_link('Quotes', href: '/quotes')
     expect(page).to have_link('Desityle', href: '/desityle')
     expect(page).to have_link('Authna', href: '/authna')
     expect(page).to have_link('Docs', href: '/docs')
@@ -41,7 +41,7 @@ feature "Drabkirn Homepage - GET /", js: true do
   # Navigate to respective pages on click - internal only
   scenario "navigates and shows quotes page" do
     click_on "Quotes"
-    expect(page.current_path).to eq "/"
+    expect(page.current_path).to eq "/quotes"
   end
 
   scenario "navigates and shows desityle page" do
