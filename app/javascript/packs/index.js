@@ -11,6 +11,11 @@ import rootReducer from '../store/reducers/rootReducer';
 
 import App from '../components/App';
 
+import 'desityle/build/css/desityle.min.css';
+import '../components/custom.css';
+
+import 'desityle/build/js/desityle.min.js';
+import '../components/custom';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
@@ -22,24 +27,32 @@ if(process.env.NODE_ENV === "production"){
   });
 
   document.addEventListener('DOMContentLoaded', () => {
-    ReactDOM.render(
-      <Provider store={ store }>
-        <Router history={piwik.connectToHistory(history)}>
-          <App />
-        </Router>
-      </Provider>,
-      document.getElementById('root')
-    );
+    const docRoot = document.getElementById('root');
+
+    if(docRoot) {
+      ReactDOM.render(
+        <Provider store={ store }>
+          <Router history={piwik.connectToHistory(history)}>
+            <App />
+          </Router>
+        </Provider>,
+        docRoot
+      );
+    }
   });
-} else{
+} else {
   document.addEventListener('DOMContentLoaded', () => {
-    ReactDOM.render(
-      <Provider store={ store }>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </Provider>,
-      document.getElementById('root')
-    );
+    const docRoot = document.getElementById('root');
+
+    if(docRoot) {
+      ReactDOM.render(
+        <Provider store={ store }>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Provider>,
+        docRoot
+      );
+    }
   });
 }

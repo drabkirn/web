@@ -3,19 +3,11 @@
   font-size: 1em !important;
 }
 
-.code-inline {
-  color: var(--light-pink-color);
+.field-explanation {
   font-size: 1em;
-  font-family: Courier, 'New Courier', monospace;
 }
 /* GLOBAL END */
 
-
-/* HEADER START */
-.drabkirn-header-intro-dsk-content h1 {
-  font-size: 4em;
-}
-/* HEADER END */
 
 
 /* LEGAL START */
@@ -37,7 +29,7 @@
 
 
 /* Media Queries */
-/* Tab Devices and down */
+/* Small + Medium Devices: Mobile + Tab */
 @media only screen and (max-width: 768px) {
   /* Legal START */
   .legal-timeline {
