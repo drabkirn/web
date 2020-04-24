@@ -10,7 +10,7 @@ function Pagination({ quotesPerPage, totalQuotes, tag, paginate }) {
 
   return (
     <React.Fragment>
-      <ul className="pagination fs-1-6 align-center mb-50 mt-50 quotes-pagination">
+      <ul className="pagination fs-1-6 align-center mb-50 mt-50 pagination-quotes">
         {pageNumbers.map(number => {
           return(
             number === 1 ? (

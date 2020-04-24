@@ -70,7 +70,7 @@ You can contribute to this project, but first, you'll need to set up your machin
 4. Make changes or tweak some bugs in this folder, meanwhile you can run a simple server to see your changes:
 
     ```bash
-      # Example, to start on localhost:3002 or YOUR_IP:3002
+    # Example, to start on localhost:3002 or YOUR_IP:3002
     $ python -m SimpleHTTPServer 3002
     ```
 

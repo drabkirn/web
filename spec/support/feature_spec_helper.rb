@@ -11,9 +11,9 @@ end
 
 shared_examples 'Drabkirn Shared Footer Content' do
   scenario "Drabkirn Shared Footer Content" do
-    expect(page).to have_selector('.footer-legal p', text: '2019-2020 - Drabkirn')
+    expect(page).to have_selector('footer .row p', text: '2019-2020 - Drabkirn')
     expect(page).to have_link('Drabkirn', href: '/')
-    expect(page).to have_selector('.footer-baaaaaa p', text: '@Baaaaaa')
+    expect(page).to have_selector('footer p', text: '@Baaaaaa')
 
     expect(page).to have_link('Newsletter', href: '/newsletter')
     expect(page).to have_link('Palace', href: '/palace')
@@ -22,7 +22,7 @@ shared_examples 'Drabkirn Shared Footer Content' do
 
   # Navigate to respective pages on click - internal only
   scenario "navigates and shows newsletter page" do
-    find(".footer-legal-links > a:nth-child(1)").click
+    find("footer .align-right > a:nth-child(1)").click
     expect(page.current_path).to eq "/newsletter"
   end
 

@@ -1,0 +1,27 @@
+// Media Queries
+// Small + Medium Devices: Mobile + Tab
+@media only screen and (max-width: 768px) {
+  // Global START
+  .mt-15-on-mob-only {
+    margin-top: 15px;
+  }
+  // Global END
+
+
+
+  // Legal START
+  .legal-timeline {
+    position: static;
+    text-align: center;
+  }
+  
+  .legal-timeline .legal-timeline-updated-on {
+    position: static;
+  }
+
+  .legal-timeline .legal-timeline-updated-on::before { 
+    content: "\A\A"; 
+    white-space: pre; 
+  }
+  // Legal END
+}

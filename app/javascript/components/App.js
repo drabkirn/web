@@ -8,8 +8,6 @@ import Authna from './Authna/Authna';
 import Quotes from './Quotes/Quotes';
 import Quote from './Quotes/Quote';
 
-import './App.css';
-
 function App() {
   return (
     <Switch>

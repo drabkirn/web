@@ -77,9 +77,9 @@ function Quotes(props) {
     <React.Fragment>
       <MainHeader hasTag={false} pageName="Quotes" shortDescription="We write thoughts in the form to redefine inspiration in a few words. Change your mindset to achieve more, get inspired, and improve your life along with us." />
 
-      <section>
-        <div className="container">
-          <p className="mb-20">We usually release a new quote once a week, but in case we are very imaginative, we may come up with a couple of them per week. If you wish to, we've also set up an API so that you can integrate our quotes in your applications. You should <a href="/docs#quotes-api">check out our docs</a> on how to use our API.</p>
+      <section className="container">
+        <div>
+          <p>We usually release a new quote once a week, but in case we are very imaginative, we may come up with a couple of them per week. If you wish to, we've also set up an API so that you can integrate our quotes in your applications. You should <a href="/docs#quotes">check out our docs</a> on how to use our API.</p>
 
           <hr className="hr-center" />
 
@@ -94,7 +94,9 @@ function Quotes(props) {
               </p>
             )
           }
+        </div>
 
+        <div className="row mt-30">
           {
             currentQuotes && currentQuotes.map((quote) => {
               return(
@@ -117,27 +119,27 @@ function Quotes(props) {
               </div>
             ) : ("")
           }
-
-          <div className="float-clearfix"></div>
-
-          <div>
-            {
-              tagParam ? (
-                <Pagination quotesPerPage={quotesPerPage} totalQuotes={taggedQuotes && taggedQuotes.length} tag={tag} paginate={paginate} />
-              ) : (
-                <Pagination quotesPerPage={quotesPerPage} totalQuotes={allQuotes && allQuotes.length} paginate={paginate} />
-              )
-            }
-          </div>
         </div>
 
-        <div className="container align-center mt-30">
+        <div>
           {
             tagParam ? (
-              <Link to={"/quotes"} className="btn wide-btn">All Quotes</Link>
+              <Pagination quotesPerPage={quotesPerPage} totalQuotes={taggedQuotes && taggedQuotes.length} tag={tag} paginate={paginate} />
+            ) : (
+              <Pagination quotesPerPage={quotesPerPage} totalQuotes={allQuotes && allQuotes.length} paginate={paginate} />
+            )
+          }
+        </div>
+      </section>
+
+      <section className="container">
+        <div className="align-center">
+          {
+            tagParam ? (
+              <Link to={"/quotes"} className="btn btn-wide">All Quotes</Link>
             ) : ("")
           }
-          <Link to={"/"} className="btn wide-btn">Back</Link>
+          <Link to={"/"} className="btn btn-wide">Back</Link>
         </div>
       </section>
 

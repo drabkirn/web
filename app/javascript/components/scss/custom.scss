@@ -1,0 +1,135 @@
+$light-black-color: #2A2D31;
+$light-grey-color: rgba(255, 255, 255, 0.8);
+$quotes-pink-color: #A53860;
+
+// Global START
+ul li pre, ul li pre code xmp, ol li pre, ol li pre code xmp {
+  font-size: 1em !important;
+}
+
+pre {
+  background: #333333;
+}
+
+h2 {
+  font-size: 2.8em;
+}
+
+a.a-no-bb {
+  border-bottom: none;
+}
+
+.fs-1 {
+  line-height: 1.6;
+}
+// Global END
+
+
+
+// Home START
+.vision-image {
+  width: 180px;
+}
+// Home END
+
+
+
+// Legal START
+.legal-timeline {
+  position: relative;
+}
+
+.legal-timeline .legal-timeline-updated-on {
+  position: absolute;
+  right: 0;
+}
+
+.drab-analytics-opt-out-iframe {
+  width: 100%;
+  height: 100%;
+}
+// Legal END 
+
+
+
+// Quotes START
+.card-wrapper {
+  &.col-dsk-6:nth-child(2n + 1) {
+    clear: both;
+  }
+
+  &.col-dsk-4:nth-child(3n + 1) {
+    clear: both;
+  }
+
+  &.col-dsk-3:nth-child(4n + 1) {
+    clear: both;
+  }
+
+  .card {
+    padding: 0.5em 1em 0 1em;
+    border-radius: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      box-shadow: 0 1px 10px 0 $light-grey-color;
+    }
+
+    .card-header, .card-content {
+      border-bottom: 2px solid $light-grey-color;
+    }
+
+    .quotes-card-header h5 a {
+      border-bottom: none;
+    }
+  
+    .quotes-card-content p a {
+      border-bottom: none;
+    }
+  
+    .quotes-card-footer a img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.pagination.pagination-quotes {
+  .pagination-active {
+    background: $quotes-pink-color;
+  }
+}
+
+.quotes-pink-color-bg {
+  background: $quotes-pink-color;
+}
+
+u.u-quotes-pink {
+  background-image: linear-gradient($quotes-pink-color, $quotes-pink-color);
+}
+
+blockquote.blockquote-quotes-pink {
+  border-left: 10px solid $quotes-pink-color;
+}
+
+.badgetag.badgetag-quotes-pink {
+  background: $quotes-pink-color !important;
+  color: $light-grey-color !important;
+}
+
+.quote-share-btns {
+  text-align: center;
+}
+
+.quote-share-btns a {
+  border-bottom: none;
+}
+
+.quote-share-btns a img {
+  width: 100px;
+}
+// Quotes END
+
+
+
+@import 'media';

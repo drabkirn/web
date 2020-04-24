@@ -14,8 +14,8 @@ feature "Newsletter - GET /newsletter", js: true do
 
   scenario "main section content" do
     # Newsletter form elements
-    expect(page).to have_selector('.form-header h2', text: 'Subscribe to our newsletter')
-    expect(page).to have_selector('.form-header .form-header-explanation', text: /You've got nothing to worry about; you can read our/)
+    expect(page).to have_selector('h2', text: 'Subscribe to our newsletter')
+    expect(page).to have_selector('u.u-gold', text: /You've got nothing to worry about; you can read our/)
     expect(page).to have_link('privacy policy', href: '/legal/privacy_policy')
     expect(page).to have_selector('.form-field input[type="text"]')
     expect(page).to have_selector('.form-field input[type="email"]')

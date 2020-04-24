@@ -24,19 +24,19 @@ function Newsletter() {
       
       <MainHeader hasTag={false} pageName="Newsletter" shortDescription="We had to work a lot on making a free newsletter for you. We shoot you a mail once in a week on everything drabkirn." />
 
-      <section className="container">
-        <div className="form-container mt-50">
-          <form className="form-tag" onSubmit={ (e) => {
-              e.preventDefault();
-              const csrfToken = document.querySelector('[name="csrf-token"]').getAttribute('content');
-              dispatch(addContactToOurNewsletterList(csrfToken, firstName, email))
-            }
-          }>
-            <div className="form-header align-center">
-              <h2>Subscribe to our newsletter</h2>
-              <u className="form-header-explanation u-gold">You've got nothing to worry about; you can read our <Link to="/legal/privacy_policy">privacy policy</Link> on how we handle your data. TLDR: We won't spam you or sell this data to any third party.</u>
-            </div>
+      <section className="container mt-50">
+        <div class="align-center">
+          <h2>Subscribe to our newsletter</h2>
+          <u class="u-gold fs-1-2 italic">You've got nothing to worry about; you can read our <Link to="/legal/privacy_policy">privacy policy</Link> on how we handle your data. TLDR: We won't spam you or sell this data to any third party.</u>
+        </div>
 
+        <div class="mt-20 align-center-flex-vh">
+          <form className="form-tag" onSubmit={ (e) => {
+                e.preventDefault();
+                const csrfToken = document.querySelector('[name="csrf-token"]').getAttribute('content');
+                dispatch(addContactToOurNewsletterList(csrfToken, firstName, email))
+              }
+            }>
             <div className="form-field">
               <label htmlFor="first_name" className="form-field-label">First Name: </label>
               <p className="form-field-explanation">We collect your first name to refer to you on our emails. We won't let anyone know that you've subscribed to us. Name must have a minimum of 4 characters and a maximum of 20 characters.</p>
@@ -52,7 +52,7 @@ function Newsletter() {
             {
               subscribeStatus ? (
                 <React.Fragment>
-                  <div className="jumbo success-jumbo">
+                  <div className="jumbo jumbo-success">
                     <p>{ subscribeData.message }</p>
                   </div>
                 </React.Fragment>
@@ -62,27 +62,27 @@ function Newsletter() {
             {
               subscribeError ? (
                 <React.Fragment>
-                  <div className="jumbo error-jumbo">
+                  <div className="jumbo jumbo-error">
                     <p>{ subscribeError.message }.</p>
                   </div>
                 </React.Fragment>
               ) : ""
             }
-
-            <div className="form-footer align-center mt-40">
-              <button className="btn wide-btn submit-btn">Subscribe</button>
+            
+            <div className="align-center mt-40">
+              <button className="btn btn-wide btn-rev">Subscribe</button>
             </div>
           </form>
         </div>
 
-        <div className="align-center mt-20">
+        <div className="align-center mt-40">
           <a href="https://go.cdadityang.xyz/nlif" className="fs-1" target="_blank" rel="noopener noreferrer">We understand things sometimes break, anyways click here if the above form doesn't work.</a>
         </div>
       </section>
 
-      <section className="container mt-40 mb-80">
+      <section className="container mt-40">
         <div className="align-center">
-          <Link to={"/"} className="btn wide-btn">Back</Link>
+          <Link to={"/"} className="btn btn-wide">Back</Link>
         </div>
       </section>
 

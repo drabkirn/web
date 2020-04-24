@@ -15,21 +15,26 @@ function QuoteCard(props) {
 
   return (
     <React.Fragment>
-      <div className="card col-dsk-6 col-mob-12 mt-20 ml-10 quotes-card">
-        <div className="card-header align-center pb-5">
-          <h3><Link to={ "/quotes/" + props.quoteId }>{props.quoteId}. { props.quoteTitle }</Link></h3>
-        </div>
-        <div className="card-content pt-5 pb-5">
-          <p><Link to={ "/quotes/" + props.quoteId }>{ props.quoteContent }</Link></p>
-        </div>
-        <div className="card-footer align-center pt-10 pb-5">
-          <a className="ml-5" href={ twitterShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-twitter-100x100.svg" alt="twtr-share-icon" /></a>
-          <a className="ml-5" href={ whatsAppShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-whatsapp-100x100.svg" alt="wapp-share-icon" /></a>
-          <a className="ml-5" href={ facebookShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-facebook-100x100.svg" alt="fb-share-icon" /></a>
-          <a className="ml-5" href={ linkedinShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-linkedin-100x100.svg" alt="linkedin-share-icon" /></a>
+      <div className="col-dsk-6 col-mob-12 mb-20 card-wrapper">
+        <div className="card quotes-pink-color-bg">
+          <div className="card-header align-center pb-5 quotes-card-header">
+            <h5><Link to={ "/quotes/" + props.quoteId }>{props.quoteId}. { props.quoteTitle }</Link></h5>
+          </div>
+
+          <div className="card-content px-10 quotes-card-content">
+            <p><Link to={ "/quotes/" + props.quoteId }>{ props.quoteContent }</Link></p>  
+          </div>
+
+          <div className="card-footer align-center pt-10 quotes-card-footer">
+            <a className="a-image ml-5" href={ twitterShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-twitter-100x100.svg" alt="twtr-share-icon" /></a>
+            <a className="a-image ml-5" href={ whatsAppShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-whatsapp-100x100.svg" alt="wapp-share-icon" /></a>
+            <a className="a-image ml-5" href={ facebookShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-facebook-100x100.svg" alt="fb-share-icon" /></a>
+            <a className="a-image ml-5" href={ linkedinShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-linkedin-100x100.svg" alt="linkedin-share-icon" /></a>
+          </div>
         </div>
       </div>
-    </React.Fragment>
+
+      </React.Fragment>
   );
 }
 

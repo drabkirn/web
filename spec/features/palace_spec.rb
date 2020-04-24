@@ -17,21 +17,21 @@ feature "Palace - GET /palace", js: true do
 
     # Apps section
     expect(page).to have_selector('h2', text: "Apps:")
-    expect(page).to have_selector('p.field-explanation', text: "Here are some of the great things that we've built:")
+    expect(page).to have_selector('p.italic.fs-1', text: "Here are some of the great things that we've built:")
     expect(page).to have_link('Quotes', href: '/quotes')
     expect(page).to have_link('Desityle', href: '/desityle')
     expect(page).to have_link('Authna', href: '/authna')
 
     # Writings section
     expect(page).to have_selector('h2', text: "Writings:")
-    expect(page).to have_selector('p.field-explanation', text: "We maintain a simple blog and documentation that reflects on how we make things work here at drabkirn.")
+    expect(page).to have_selector('p.italic.fs-1', text: "We maintain a simple blog and documentation that reflects on how we make things work here at drabkirn.")
     expect(page).to have_link('Blog', href: 'https://blog.cdadityang.xyz')
     expect(page).to have_link('Docs', href: '/docs')
     expect(page).to have_selector('.rspec-a-newsletter', text: "Newsletter")
 
     # Legal section
     expect(page).to have_selector('h2', text: "Legal:")
-    expect(page).to have_selector('p.field-explanation', text: "We don't take things seriously at drabkirn, unless it's legal:")
+    expect(page).to have_selector('p.italic.fs-1', text: "We don't take things seriously at drabkirn, unless it's legal:")
     expect(page).to have_link('Privacy', href: '/legal/privacy_policy')
     expect(page).to have_link('Terms', href: '/legal/terms_conditions')
     expect(page).to have_link('Credits', href: '/legal/credits')
@@ -39,7 +39,7 @@ feature "Palace - GET /palace", js: true do
 
     # social section
     expect(page).to have_selector('h2', text: "Social:")
-    expect(page).to have_selector('p.field-explanation', text: "You may want to connect with us or collaborate or want to say us a sweet Hi, here's how you can do it:")
+    expect(page).to have_selector('p.italic.fs-1', text: "You may want to connect with us or collaborate or want to say us a sweet Hi, here's how you can do it:")
     expect(page).to have_link('', href: 'https://github.com/drabkirn')
     expect(page).to have_link('', href: 'https://twitter.com/drabkirn')
     expect(page).to have_link('', href: 'https://www.instagram.com/drabkirn')

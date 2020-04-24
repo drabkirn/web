@@ -15,11 +15,11 @@ function Authna() {
         </div>
       </section>
 
-      <section className="mt-50 mb-70">
+      <section className="mt-50">
         <div className="align-center">
-          <a href="https://github.com/drabkirn/authna" className="btn wide-btn" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/drabkirn/authna" className="btn btn-wide" target="_blank" rel="noopener noreferrer">GitHub</a>
           <br />
-          <Link to="/" className="btn wide-btn">Back</Link>
+          <Link to="/" className="btn btn-wide btn-rev">Back</Link>
         </div>
       </section>
 

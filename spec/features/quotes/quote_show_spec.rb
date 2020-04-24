@@ -18,8 +18,8 @@ feature "Quote of ID - GET /quotes/:id", js: true do
 
   scenario "main section content" do
     # Quotes Show content of the ID
-    expect(page).to have_selector('h2', text: @selected_quote.title)
-    expect(page).to have_selector('.quotes-blockquote', text: @selected_quote.content)
+    expect(page).to have_selector('h4', text: @selected_quote.title)
+    expect(page).to have_selector('.blockquote-quotes-pink', text: @selected_quote.content)
     expect(page).to have_selector('p', text: "- #{@selected_quote.author.upcase}")
     expect(page).to have_selector('p', text: /PUBLISHED ON:/)
     @selected_quote.tags.each do |tag|
@@ -45,6 +45,7 @@ feature "Quote of ID - GET /quotes/:id", js: true do
     @selected_quote = Quote.find(2)
     visit "/quotes/#{@selected_quote.id}"
     click_on '<=='
+    sleep 1
     expect(page.current_path).to eq "/quotes/1"
   end
 
@@ -52,6 +53,7 @@ feature "Quote of ID - GET /quotes/:id", js: true do
     @selected_quote = Quote.find(2)
     visit "/quotes/#{@selected_quote.id}"
     click_on '==>'
+    sleep 1
     expect(page.current_path).to eq "/quotes/3"
   end
 

@@ -59,62 +59,78 @@ function Quote(props) {
     <React.Fragment>
       <MainHeader hasTag={false} pageName="Quotes" shortDescription="We write thoughts in the form to redefine inspiration in a few words. Change your mindset to achieve more, get inspired, and improve your life along with us." />
 
-      <section>
-        <div className="container mt-50">
+      <section className="container mt-50" id="quoteShow">
+        <div>
           {
             allQuotesError ? (
               <React.Fragment>
-                <div className="jumbo error-jumbo">
+                <div className="jumbo jumbo-error">
                   <p>{ allQuotesError.message }</p>
                 </div>
               </React.Fragment>
             ) : (
               <React.Fragment>
-                <h2 className="align-center mb-35"><u className="u-quotes-pink">{ allQuotes && allQuotes[quoteId - 1].title }</u></h2>
-                <blockquote className="quotes-blockquote">{allQuotes && allQuotes[quoteId - 1].content}</blockquote>
-                <p className="align-right p-badgetag p-quotes-by"><span className="badgetag badgetag-quotes-pink"><b><em>- { allQuotes && allQuotes[quoteId - 1].author }</em></b></span></p>
+                <div className="align-center">
+                  <h4><u className="u-quotes-pink">{ quoteId }. { allQuotes && allQuotes[quoteId - 1].title }</u></h4>
+                </div>
 
-                <p className="p-badgetag mt-40"><span className="badgetag badgetag-orange">Published on: { formattedPubDate && formattedPubDate }</span></p>
+                <div>
+                  <blockquote className="blockquote-quotes-pink">{allQuotes && allQuotes[quoteId - 1].content}</blockquote>
+                </div>
 
-                <div className="mt-40 align-center">
+                <div className="align-right">
+                  <p className="italic bold badgetag badgetag-quotes-pink">- { allQuotes && allQuotes[quoteId - 1].author }</p>
+                </div>
+
+                <div className="mt-30 align-center-on-mob-only">
+                  <p className="badgetag badgetag-orange">Published on: { formattedPubDate && formattedPubDate }</p>
+                </div>
+
+                <div className="align-center mt-50">
                   {
                     allQuotes && allQuotes[quoteId - 1].tags.map((tag) => {
                       return (
-                        <p className="p-badgetag" key={tag}><Link to={"/quotes?tag=" + tag} className="badgetag badgetag-quotes-pink">{ tag }</Link></p>
+                        <p className="badgetag badgetag-quotes-pink" key={tag}><Link to={"/quotes?tag=" + tag}>{ tag }</Link></p>
                       );
                     })
                   }
-                </div>
-
-                <div className="mt-50">
-                  <h2>Share em:</h2>
-                  <p>
-                    Hey, did you know, you can share our quotes directly from below, we save you from heavy-lifting COPY-PASTING them:
-                  </p>
-                </div>
-
-                <div className="quote-share-btns mt-50">
-                  <a className="ml-15" href={ twitterShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-twitter-100x100.svg" alt="twtr-share-icon" /></a>
-                  <a className="ml-15" href={ whatsAppShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-whatsapp-100x100.svg" alt="wapp-share-icon" /></a>
-                  <a className="ml-15" href={ facebookShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-facebook-100x100.svg" alt="fb-share-icon" /></a>
-                  <a className="ml-15" href={ linkedinShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-linkedin-100x100.svg" alt="linkedin-share-icon" /></a>
                 </div>
               </React.Fragment>
             )
           }
         </div>
+      </section>
 
-        <div className="container align-center mt-60">
-          { quoteId === 1 ? ("") : (
-            <Link to={`/quotes/${quoteId - 1}`} className="btn">&#60;==</Link>
+      <hr className="hr-center" />
+
+      <section className="container">
+        <div>
+          <h2>Share em:</h2>
+          <p>
+            Hey, did you know, you can share our quotes directly from below, we save you from heavy-lifting COPY-PASTING them:
+          </p>
+        </div>
+
+        <div className="align-center mt-40">
+          <a className="a-image ml-15" href={ twitterShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-twitter-100x100.svg" alt="twtr-share-icon" /></a>
+          <a className="a-image ml-15" href={ whatsAppShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-whatsapp-100x100.svg" alt="wapp-share-icon" /></a>
+          <a className="a-image ml-15" href={ facebookShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-facebook-100x100.svg" alt="fb-share-icon" /></a>
+          <a className="a-image ml-15" href={ linkedinShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-linkedin-100x100.svg" alt="linkedin-share-icon" /></a>
+        </div>
+      </section>
+
+      <section className="container align-center mt-50">
+        {
+          quoteId === 1 ? ("") : (
+            <Link to={`/quotes/${quoteId - 1}`} className="btn" onClick={(() => window.location.href="#quoteShow")}>&#60;==</Link>
           )}
-          <Link to={"/quotes"} className="btn wide-btn">Back</Link>
+          <Link to={"/quotes"} className="btn btn-wide">Back</Link>
           { !allQuotes ? ("") : (
             quoteId === allQuotes.length ? ("") : (
-              <Link to={`/quotes/${quoteId + 1}`} className="btn">==&#62;</Link>
+              <Link to={`/quotes/${quoteId + 1}`} className="btn" onClick={(() => window.location.href="#quoteShow")}>==&#62;</Link>
             )
-          ) }
-        </div>
+          )
+        }
       </section>
 
       <Footer />

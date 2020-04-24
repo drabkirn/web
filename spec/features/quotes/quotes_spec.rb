@@ -18,15 +18,15 @@ feature "Quotes - GET /quotes", js: true do
   scenario "main section content" do
     # Quotes Introduction
     expect(page).to have_selector('p', text: /We usually release a new quote once a week, but in case we are very imaginative, we may come up with a couple of them per week./)
-    expect(page).to have_link('check out our docs', href: '/docs#quotes-api')
+    expect(page).to have_link('check out our docs', href: '/docs#quotes')
     expect(page).to have_selector('p', text: /Here are all the quotes straight from our database/)
 
     # Quotes cards
     drabkirnQuotesBaseURL = "https://drabkirn.cdadityang.xyz/quotes"
     allQuotes = Quote.all
     allQuotes.each do |quote|
-      expect(page).to have_selector('.quotes-card .card-header h3', text: quote.title)
-      expect(page).to have_selector('.quotes-card .card-content p', text: quote.content)
+      expect(page).to have_selector('.card .quotes-card-header h5', text: quote.title)
+      expect(page).to have_selector('.card .quotes-card-content p', text: quote.content)
 
       twitterCharLimit = 220;
       twitterTruncatedText = "";
@@ -42,10 +42,10 @@ feature "Quotes - GET /quotes", js: true do
       expect(page).to have_selector('.card .card-footer a[href="https://www.linkedin.com/sharing/share-offsite/?url=' + drabkirnQuotesBaseURL + '/' + quote.id.to_s)
     end
 
-    expect(page).to have_selector('.quotes-card .card-footer img[alt="twtr-share-icon"]', count: Quote.all.count)
-    expect(page).to have_selector('.quotes-card .card-footer img[alt="wapp-share-icon"]', count: Quote.all.count)
-    expect(page).to have_selector('.quotes-card .card-footer img[alt="fb-share-icon"]', count: Quote.all.count)
-    expect(page).to have_selector('.quotes-card .card-footer img[alt="linkedin-share-icon"]', count: Quote.all.count)
+    expect(page).to have_selector('.card .quotes-card-footer img[alt="twtr-share-icon"]', count: Quote.all.count)
+    expect(page).to have_selector('.card .quotes-card-footer img[alt="wapp-share-icon"]', count: Quote.all.count)
+    expect(page).to have_selector('.card .quotes-card-footer img[alt="fb-share-icon"]', count: Quote.all.count)
+    expect(page).to have_selector('.card .quotes-card-footer img[alt="linkedin-share-icon"]', count: Quote.all.count)
 
     70.times { create(:quote) }
     visit "/quotes"
@@ -72,7 +72,7 @@ feature "Quotes - GET /quotes", js: true do
     expect(page).to have_selector('.pagination li', count: 2)
 
     # Navigation links/btns
-    expect(page).to have_selector('.wide-btn', text: 'All Quotes')
+    expect(page).to have_selector('.btn-wide', text: 'All Quotes')
 
     # Navigate when clicked
     click_on 'All Quotes'
