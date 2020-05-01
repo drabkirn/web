@@ -25,9 +25,10 @@ function Palace() {
           <h2 className="mb-5">Apps:</h2>
           <p className="italic fs-1">Here are some of the great things that we've built:</p>
           <div className="align-center mt-20">
-            <Link to="/quotes" className="btn">Quotes</Link>
-            <a href="/desityle" className="btn">Desityle</a>
             <Link to="/authna" className="btn">Authna</Link>
+            <a href="/desityle" className="btn btn-rev">Desityle</a>
+            <a href="https://feedka.herokuapp.com" className="btn" target="_blank" rel="noopener noreferrer">Feedka</a>
+            <Link to="/quotes" className="btn btn-rev">Quotes</Link>
           </div>
         </div>
       </section>

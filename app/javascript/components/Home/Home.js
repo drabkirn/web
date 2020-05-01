@@ -51,10 +51,11 @@ function Home() {
 
         <div className="mt-30 align-center">
           <a href="https://cdadityang.xyz" className="btn" target="_blank" rel="noopener noreferrer">Aditya</a>
-          <Link to="/quotes" className="btn btn-rev">Quotes</Link>
-          <a href="/desityle" className="btn">Desityle</a>
           <Link to="/authna" className="btn btn-rev">Authna</Link>
-          <a href="/docs" className="btn">Docs</a>
+          <a href="/desityle" className="btn">Desityle</a>
+          <a href="/docs" className="btn btn-rev">Docs</a>
+          <a href="https://feedka.herokuapp.com" className="btn" target="_blank" rel="noopener noreferrer">Feedka</a>
+          <Link to="/quotes" className="btn btn-rev">Quotes</Link>
         </div>
       </section>
 

@@ -22,10 +22,11 @@ feature "Drabkirn Homepage - GET /", js: true do
     # Navigation buttons + statement
     expect(page).to have_selector('p.fs-1-6', text: /We know our motto, mission, and vision are vague/)
     expect(page).to have_link('Aditya', href: 'https://cdadityang.xyz')
-    expect(page).to have_link('Quotes', href: '/quotes')
-    expect(page).to have_link('Desityle', href: '/desityle')
     expect(page).to have_link('Authna', href: '/authna')
+    expect(page).to have_link('Desityle', href: '/desityle')
     expect(page).to have_link('Docs', href: '/docs')
+    expect(page).to have_link('Feedka', href: 'https://feedka.herokuapp.com')
+    expect(page).to have_link('Quotes', href: '/quotes')
   end
 
   scenario "social-connect section" do
