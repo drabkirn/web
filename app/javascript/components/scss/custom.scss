@@ -3,8 +3,20 @@ $light-grey-color: rgba(255, 255, 255, 0.8);
 $quotes-pink-color: #A53860;
 
 // Global START
+html {
+  scroll-behavior: smooth;
+}
+
 ul li pre, ul li pre code xmp, ol li pre, ol li pre code xmp {
   font-size: 1em !important;
+}
+
+ol li, ul li {
+  margin-bottom: 10px;
+}
+
+ol.ol-toc li {
+  margin-bottom: 0;
 }
 
 pre {
