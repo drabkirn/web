@@ -3,7 +3,7 @@ class Ui::Users::OmniauthCallbacksController < Devise::OmniauthCallbacksControll
   def github
     @user = User.from_github_omniauth(auth_params)
     if @user.persisted?
-      sign_in_and_redirect @user, 
+      sign_in_and_redirect @user
       set_flash_message(:notice, :success, kind: "Github") if is_navigational_format?
     else
       session["devise.github_data"] = auth_params

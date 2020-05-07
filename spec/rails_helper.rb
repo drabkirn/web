@@ -142,6 +142,12 @@ RSpec.configure do |config|
   end
 
 
+  # Devise controller testing helpers
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+
+  # Devise helpers for feature spec testing
+  config.include Warden::Test::Helpers
+
   # Webmock, Stubbing requests
   config.before(:each) do
     stub_request(:put, "https://api.sendgrid.com/v3/marketing/contacts").

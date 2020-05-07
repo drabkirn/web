@@ -83,6 +83,6 @@ class User < ApplicationRecord
   private
     ## Downcase the username before saving, ensures integrity.
     def downcase_username
-      self.username = self.username.downcase
+      self.username = self.username.downcase if self.username
     end
 end

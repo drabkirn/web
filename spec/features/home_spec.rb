@@ -23,6 +23,7 @@ feature "Drabkirn Homepage - GET /", js: true do
     expect(page).to have_selector('p.fs-1-6', text: /We know our motto, mission, and vision are vague/)
     expect(page).to have_link('Aditya', href: 'https://cdadityang.xyz')
     expect(page).to have_link('Authna', href: '/authna')
+    expect(page).to have_link('Dashboard', href: '/dashboard')
     expect(page).to have_link('Desityle', href: '/desityle')
     expect(page).to have_link('Docs', href: '/docs')
     expect(page).to have_link('Feedka', href: 'https://feedka.herokuapp.com')
@@ -40,9 +41,21 @@ feature "Drabkirn Homepage - GET /", js: true do
   end
 
   # Navigate to respective pages on click - internal only
-  scenario "navigates and shows quotes page" do
-    click_on "Quotes"
-    expect(page.current_path).to eq "/quotes"
+  scenario "navigates and shows authna page" do
+    click_on "Authna"
+    expect(page.current_path).to eq "/authna"
+  end
+
+  scenario "navigates and shows dashboard page" do
+    @user1 = create(:confirmed_user)
+    login_as(@user1, scope: :user)
+    click_on "Dashboard"
+    expect(page.current_path).to eq "/dashboard"
+  end
+
+  scenario "navigates and shows sign in page when click on dashboard" do
+    click_on "Dashboard"
+    expect(page.current_path).to eq "/users/sign_in"
   end
 
   scenario "navigates and shows desityle page" do
@@ -50,14 +63,14 @@ feature "Drabkirn Homepage - GET /", js: true do
     expect(page.current_path).to eq "/desityle"
   end
 
-  scenario "navigates and shows authna page" do
-    click_on "Authna"
-    expect(page.current_path).to eq "/authna"
-  end
-
   scenario "navigates and shows docs page" do
     visit "/docs"
     expect(page.current_path).to eq "/docs"
+  end
+
+  scenario "navigates and shows quotes page" do
+    click_on "Quotes"
+    expect(page.current_path).to eq "/quotes"
   end
 
   it_behaves_like "Drabkirn Shared Footer Content"
