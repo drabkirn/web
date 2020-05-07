@@ -52,10 +52,11 @@ function Home() {
         <div className="mt-30 align-center">
           <a href="https://cdadityang.xyz" className="btn" target="_blank" rel="noopener noreferrer">Aditya</a>
           <Link to="/authna" className="btn btn-rev">Authna</Link>
-          <a href="/desityle" className="btn">Desityle</a>
-          <a href="/docs" className="btn btn-rev">Docs</a>
-          <a href="https://feedka.herokuapp.com" className="btn" target="_blank" rel="noopener noreferrer">Feedka</a>
-          <Link to="/quotes" className="btn btn-rev">Quotes</Link>
+          <a href="/dashboard" className="btn">Dashboard</a>
+          <a href="/desityle" className="btn btn-rev">Desityle</a>
+          <a href="/docs" className="btn">Docs</a>
+          <a href="https://feedka.herokuapp.com" className="btn btn-rev" target="_blank" rel="noopener noreferrer">Feedka</a>
+          <Link to="/quotes" className="btn">Quotes</Link>
         </div>
       </section>
 

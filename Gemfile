@@ -53,3 +53,9 @@ end
 ## Custom Gems:
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'redcarpet', '~> 3.5'
+gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'omniauth-github', '~> 1.4'
+gem 'omniauth-google-oauth2', '~> 0.8.0'
+gem 'omniauth-twitter', '~> 1.4'
+gem 'activerecord-session_store', '~> 1.1', '>= 1.1.3'
+gem 'active_model_otp', :git => 'https://github.com/heapsource/active_model_otp.git'

@@ -39,4 +39,38 @@ class Message
   def self.newsletter_api_error
     "Error: There is something wrong with your request, please try later or try alternative method."
   end
+
+  # Users messages
+  def self.omniauth_login_error
+    "We couldn't login you in using Twitter. Maybe you've already signed up here or something else is wrong. Please try again and if the problem persists, contact us from the footer of this page."
+  end
+
+  # 2FA Messages
+  def self.two_fa_empty
+    "You've two factor enabled for your account, so you'll need to enter your token while signing in. If you've no access to your OTP, contact us from the footer of this page."
+  end
+
+  def self.two_fa_wrong
+    "You've entered wrong 2FA code. Please try again and if the problem persists, contact us from the footer of this page."
+  end
+  
+  def self.two_fa_enabled
+    "Yayay! Two factor authentication has been successfully enabled for your account, now you'll need to input token to access your account. Your account is now more secure."
+  end
+
+  def self.two_fa_not_enabled
+    "We're sorry, we couldn't enable two factor authentication to your account. Please try again and if the problem persists, contact us from the footer of this page."
+  end
+
+  def self.two_fa_disabled
+    "Woooo! Two factor authentication has been successfully disabled for your account. This has now reduced your account security."
+  end
+
+  def self.two_fa_not_disabled
+    "We're sorry, we couldn't disable two factor authentication to your account. Please try again and if the problem persists, contact us from the footer of this page."
+  end
+
+  def self.two_fa_for_non_omniauth_user(provider)
+    "You are using #{provider} to access your account, so you don't need to enable 2FA here because #{provider} have built-in 2FA settings."
+  end
 end

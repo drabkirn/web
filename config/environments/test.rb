@@ -51,4 +51,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = false
   config.cache_store = :null_store
+  
+  # Devise mailer
+  config.action_mailer.default_url_options = { host: ENV["app_hostname"], port: ENV["app_portname"].to_i }
 end

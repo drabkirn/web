@@ -1,0 +1,133 @@
+<section class="container mt-50">
+  <div class="align-center">
+    <h2>Your Account</h2>
+    <u class="u-orange fs-1-2 italic">Your Email: <%= resource.email %></u>
+  </div>
+</section>
+
+<hr class="hr-center" />
+
+<section class="container">
+  <div class="align-center">
+    <h3>Manage 2FA</h3>
+    <u class="u-gold fs-1-2 italic">You can add a security layer on your account by enabling Two Factor Authentication(2FA). Every time you log in, you'll need to input the OTP code to access your account.</u>
+  </div>
+
+  <div class="mt-40">
+    <b class="fs-1-3">Current 2FA Status: <%= resource.otp_module_enabled? ? 'Enabled' : 'Disabled' %></b>
+
+    <% url = resource.otp_module_enabled? ? disable_multi_factor_authentication_user_path(resource) : enable_multi_factor_authentication_user_path(resource) %>
+
+    <%= form_for :multi_factor_authentication, url: url, html: { class: "form-tag mt-10" } do |f| %>
+      <% unless resource.otp_module_enabled? %>
+        <p class="fs-1-2 italic">
+          Download the open-source andOTP app(<%= link_to "Android", "https://play.google.com/store/apps/details?id=org.shadowice.flocke.andotp", target: "_blank", rel: "noopener noreferrer" %>) or Google Authenticator app(<%= link_to "Android", "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2", target: "_blank", rel: "noopener noreferrer" %> or <%= link_to "IOS", "https://apps.apple.com/us/app/google-authenticator/id388497605", target: "_blank", rel: "noopener noreferrer" %>), then add the below secret key, press SAVE. Then enter the OTP code below to enable 2FA.
+        </p>
+
+        <br /><br />
+
+        <p>Your secret key: <b><%= resource.otp_secret_key %></b></p>
+      <% end %>
+
+      <div class="form-field">
+        <%= f.label :otp_code_token, class: "form-field-label" %>
+        <p class="form-field-explanation">Open your authenticator app, and enter the 6 digit OTP code below.</p>
+        <%= f.text_field :otp_code_token, class: "form-field-input", minlength: "6", maxlength: "6", pattern: "[0-9]*", autocomplete: "one-time-code" %>
+      </div>
+  
+      <div class="align-center mt-30">
+        <%= f.submit resource.otp_module_enabled? ? 'Disable 2FA' : 'Enable 2FA', class: "btn btn-wide btn-rev" %>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<hr class="hr-center" />
+
+<section class="container">
+  <div class="align-center">
+    <h3>Update account</h3>
+    <u class="u-gold fs-1-2 italic">If you think you've given us wrong information while signing up, you can update your profile here. It might have happen by mistake, so keep this updated.</u>
+  </div>
+
+  <div class="mt-30 align-center-flex-vh">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form-tag" }) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+
+      <div class="form-field">
+        <%= f.label :first_name, class: "form-field-label" %>
+        <p class="form-field-explanation">This is how we call you currently. You can change it here, if you want us to call you by some other name. Your first name must be a minimum of 3 characters and a maximum of 30 characters.</p>
+        <%= f.text_field :first_name, autocomplete: "first-name", class: "form-field-input", required: true, minlength: "3", maxlength: "30" %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :last_name, class: "form-field-label" %>
+        <p class="form-field-explanation">This is your last name in our records, you can change this if you want to. Your last name must be a minimum of 3 characters and a maximum of 30 characters.</p>
+        <%= f.text_field :last_name, autocomplete: "last-name", class: "form-field-input", required: true, minlength: "3", maxlength: "30" %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :username, class: "form-field-label" %>
+        <p class="form-field-explanation">You cannot change your username, we show here only for your reference.</p>
+        <%= f.text_field :username, class: "form-field-input", disabled: true %>
+      </div>
+
+      <% unless omniauth_providers_array.include? resource.provider %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div class="jumbo jumbo-info">
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          </div>
+        <% end %>
+
+        <div class="form-field">
+          <%= f.label :email, class: "form-field-label" %>
+          <p class="form-field-explanation">Your current email address, If you want to change, then you can change it here. Make sure your email is valid and you have access to this email. We use this email address only for authentication purposes.</p>
+          <%= f.email_field :email, autocomplete: "email", class: "form-field-input", required: true %>
+        </div>
+      <% end %>
+
+      <div class="form-field">
+        <%= f.label :current_password, class: "form-field-label" %>
+        <p class="form-field-explanation">Before you change your password, we require you to enter your current password first.</p>
+        <%= f.password_field :current_password, class: "form-field-input", required: true, minlength: "8", maxlength: "80", autocomplete: "current-password" %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :password, class: "form-field-label" %>
+        <p class="form-field-explanation">Leave this blank if you've nothing to change. If you're entering a new password, make sure your password has a minimum of 8 characters and a maximum of 80 characters.</p>
+        <%= f.password_field :password, class: "form-field-input", minlength: "8", maxlength: "80", autocomplete: "new-password" %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :password_confirmation, class: "form-field-label" %>
+        <p class="form-field-explanation">Confirm your password that you've entered above. Your password must be a minimum of 8 characters and a maximum of 80 characters.</p>
+        <%= f.password_field :password_confirmation, class: "form-field-input", minlength: "8", maxlength: "80", autocomplete: "new-password" %>
+      </div>
+
+      <div class="align-center mt-30">
+        <%= f.submit "Update", class: "btn btn-wide btn-rev" %>
+      </div>
+    <% end %>
+    </div>
+</section>
+
+<hr class="hr-center" />
+
+<section class="container">
+  <div class="align-center">
+    <h3>Delete my account</h3>
+    <u class="u-dark-red fs-1-2 italic">This is the danger zone, your account, and all the data associated with it will be deleted.</u>
+  </div>
+
+  <div class="align-center mt-20">
+    <p>I'm sure, please delete my account: <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "dark-red-bg" %></p>
+  </div>
+</section>
+
+<hr class="hr-center" />
+
+<section class="container align-center mt-30">
+  <%= link_to "Back", :back, class: "btn btn-wide" %>
+</section>
+
+<%= render 'shared/footer' %>

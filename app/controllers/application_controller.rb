@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
   # For API requests, our custom Accept header must be present
   before_action :accept_header_check_for_api_requests
 
+  # For devise controllers, manage permitted parameters
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   # When making invalid API-only requests, raise 404
   def action_not_found
     raise(ActionController::RoutingError, Message.action_not_found)
@@ -16,6 +19,25 @@ class ApplicationController < ActionController::Base
   def internal_server_error
     raise(ExceptionHandler::InternalServerError, Message.exception_internal_server_error)
   end
+
+  protected
+    ## Devise whitelist params for users signup and updates
+    def configure_permitted_parameters
+      sign_up_added_attrs = [:first_name, :last_name, :username, :email, :password, :password_confirmation, :remember_me]
+      update_added_attrs = [:first_name, :last_name, :email, :password, :password_confirmation, :remember_me]
+      devise_parameter_sanitizer.permit :sign_up, keys: sign_up_added_attrs
+      devise_parameter_sanitizer.permit :account_update, keys: update_added_attrs
+    end
+
+    ## Devise - after sign_in, goto /dashboard
+    def after_sign_in_path_for(resource)
+      dashboard_path
+    end
+
+    ## Devise - after sign out, goto /users/sign_in
+    def after_sign_out_path_for(resource)
+      new_user_session_path
+    end
 
   private
     ## First check if the request is API or UI

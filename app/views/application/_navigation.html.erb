@@ -1,0 +1,74 @@
+<nav class="row fixed-navbar">
+  <div class="col-dsk-2 fixed-navbar-hamburger">
+    <%= link_to 'javascript:void(0);', class: "a-image" do %>
+      <%= image_tag 'icons/hamburger-48x48.png', alt: "Menu" %>
+    <% end %>
+    <ul class="ul-none fixed-navbar-hamburger-links">
+      <li><%= link_to "Home", root_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Dashboard', dashboard_path %></li>
+        <li><%= link_to 'Account', edit_user_registration_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-dsk-2 fixed-navbar-logo">
+    <% if user_signed_in? %>
+      <%= link_to dashboard_path, class: "a-image" do %>
+        <%= image_tag 'drabkirn-logo-180x180.png', width: "60", height: "60", alt: "Logo" %>
+      <% end %>
+    <% else %>
+      <%= link_to root_path, class: "a-image" do %>
+        <%= image_tag 'drabkirn-logo-180x180.png', width: "60", height: "60", alt: "Logo" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="col-dsk-10 align-right fixed-navbar-content">
+    <ul class="ul-none fixed-navbar-content-links">
+      <li><%= link_to "Home", root_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Dashboard', dashboard_path %></li>
+        <li><%= link_to 'Account', edit_user_registration_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+<nav class="default-navbar align-center">
+  <div class="default-navbar-hamburger">
+    <%= link_to 'javascript:void(0);', class: "a-image" do %>
+      <%= image_tag 'icons/hamburger-48x48.png', alt: "Menu" %>
+    <% end %>
+    <ul class="ul-none default-navbar-hamburger-links">
+      <li><%= link_to "Home", root_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Dashboard', dashboard_path %></li>
+        <li><%= link_to 'Account', edit_user_registration_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </div>
+  <ul class="ul-none default-navbar-links">
+    <li><%= link_to "Home", root_path %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to 'Dashboard', dashboard_path %></li>
+      <li><%= link_to 'Account', edit_user_registration_path %></li>
+      <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to 'Login', new_user_session_path %></li>
+      <li><%= link_to 'Sign up', new_user_registration_path %></li>
+    <% end %>
+  </ul>
+</nav>

@@ -61,4 +61,7 @@ Rails.application.configure do
   ## Show full error reports.
   ## Defaults to true
   config.consider_all_requests_local = false
+
+  # Devise Mailer
+  config.action_mailer.default_url_options = { host: ENV["app_hostname"], port: ENV["app_port"].to_i }
 end
