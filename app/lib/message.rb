@@ -9,6 +9,10 @@ class Message
     "Exception: You've not included a valid Accept header in your request"
   end
 
+  def self.unauthorized_for_scope(scope)
+    "Error: You're unauthorized for making this request for scope: #{scope}"
+  end
+
   # Quotes messages
   def self.quotes_index_loaded
     "All Drabkirn Quotes loaded successfully"
@@ -16,6 +20,27 @@ class Message
 
   def self.quote_show_loaded(id)
     "Drabkirn Quote with #{id} loaded successfully"
+  end
+
+  def self.exception_missing_quotes_token_header
+    "Exception: You've not included a valid QuotesToken header in your request"
+  end
+
+  # API Manager messages
+  def self.exception_missing_scope_param
+    "Exception: Missing scope parameter from your request"
+  end
+
+  def self.error_wrong_scope_param(scope_param)
+    "Error: You've entered a wrong scope param: #{scope_param}, this value is not accepted"
+  end
+
+  def self.error_already_enabled_scope(scope_param)
+    "Error: You've already enabled this scope: #{scope_param}, see your secrets in your dashboard"
+  end
+
+  def self.success_enable_api_scope(scope_param)
+    "You've successfully enabled the API for #{scope_param}, now you can start using the API"
   end
 
   # System messages

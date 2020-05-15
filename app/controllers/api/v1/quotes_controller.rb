@@ -1,4 +1,7 @@
 class Api::V1::QuotesController < ApplicationController
+  ## Quotes token header must be present and valid to get access to Quotes
+  before_action :require_quotes_token_header
+  before_action :validate_quotes_token_header
 
   # API: GET /quotes
   def index
@@ -22,4 +25,46 @@ class Api::V1::QuotesController < ApplicationController
     }
     json_response(send_response)
   end
+
+  private
+    ## For every request made to Quotes :show, :index
+    ## Check whether QuotesToken header is present or not
+    def require_quotes_token_header
+      quotes_token_header = request.headers['QuotesToken'] ? request.headers['QuotesToken'] : nil
+      if !quotes_token_header
+        send_response = {
+          status: 401,
+          errors: {
+            message: Message.exception_missing_quotes_token_header
+          }
+        }
+        json_response(send_response, :unauthorized)
+        return
+      end
+    end
+
+    ## Now validate the QuotesToken, see if it is has current permission for API Access
+    def validate_quotes_token_header
+      current_api_scope = "Quote"
+      quotes_token_header = request.headers['QuotesToken']
+      api_data = ApiManager.validate_scope_secret(current_api_scope, quotes_token_header)
+      if !api_data
+        send_response = {
+          status: 401,
+          errors: {
+            message: Message.unauthorized_for_scope(current_api_scope)
+          }
+        }
+        json_response(send_response, :unauthorized)
+        return
+      end
+      update_api_data(current_api_scope, api_data)
+    end
+
+    ## Everything is right, now update the DB
+    def update_api_data(scope, api_data)
+      scope_index = api_data.scopes.find_index(scope)
+      api_data.api_counts[scope_index] += 1
+      api_data.save
+    end
 end

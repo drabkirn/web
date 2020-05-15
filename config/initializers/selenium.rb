@@ -4,5 +4,5 @@ if Rails.env.development? or Rails.env.test?
 
   Selenium::WebDriver.logger.level = :debug
   Selenium::WebDriver.logger.output = '/tmp/selenium.log'
-  ENV['DISPLAY']=':99.0'
+  ENV['DISPLAY']=':99.0' if ENV["ci_true"]
 end

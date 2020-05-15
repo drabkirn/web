@@ -1,9 +1,12 @@
+import { DRABKIRN_QUOTES_API_KEY } from '../../components/Shared/Defaults';
+
 // Get all the Quotes - GET /quotes
 export const fetchAllQuotes = () => {
   return (dispatch) => {
     let myHeaders = {
       'Content-Type': 'application/json',
       'User-Agent': 'Drabkirn Web : Website : NA',
+      'QuotesToken': DRABKIRN_QUOTES_API_KEY,
       'Accept': 'application/drabkirn.web.v1'
     };
     

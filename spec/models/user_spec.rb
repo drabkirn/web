@@ -8,6 +8,8 @@ RSpec.describe User, type: :model do
     expect(user).to be_valid
   end
 
+  it { should have_one(:api_manager) }
+
   describe "email validations" do
     it { should validate_presence_of(:email) }
 

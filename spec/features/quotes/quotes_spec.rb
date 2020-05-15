@@ -5,6 +5,11 @@ feature "Quotes - GET /quotes", js: true do
     3.times { create(:quote) }
     # Test for Twitter truncate text
     create(:quote, content: Faker::Lorem.sentence(word_count: 50))
+    @user = create(:confirmed_user)
+    @api_manager = create(:api_manager, scopes: ["Quote"], api_counts: [0], user_id: @user.id)
+    @api_manager.secret = "0c20892fa04cfebe94c611baf13670a3e22284071ddf650933687a0a2522"
+    @api_manager.save
+    @api_manager.reload
     visit "/quotes"
   end
 

@@ -1,5 +1,35 @@
 <section class="container">
   <div class="align-center mt-50">
+    <h3>Your Dashboard</h3>
     <u class="u-orange">Signed in as: <%= current_user.email %></u>
   </div>
 </section>
+
+<section class="container mt-50">
+  <div>
+    <% if current_user.api_manager && current_user.api_manager.scopes.include?("Quote") %>
+      <h4>Quotes API:</h4>
+      <table class="mt-20">
+        <thead>
+          <tr>
+            <th>Scope</th>
+            <th>Secret</th>
+            <th>API Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= current_user.api_manager.scopes[0] %></td>
+            <td><%= current_user.api_manager.secret %></td>
+            <td><%= current_user.api_manager.api_counts[0] %></td>
+          </tr>
+        </tbody>
+      </table>
+    <% else %>
+      <h4 class="mb-20">Get access to quotes API:</h4>
+      <p>Get started integrating Quotes API in your apps: <%= link_to "Request access", api_managers_new_request_path(scope: "Quote") %></p>
+    <% end %>
+  </div>
+</section>
+
+<%= render 'shared/footer' %>

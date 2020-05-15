@@ -113,7 +113,7 @@ function Quotes(props) {
           {
             allQuotesError ? (
               <div className="mt-20">
-                <div className="jumbo error-jumbo mt-30">
+                <div className="jumbo jumbo-error mt-30">
                   <p>{ allQuotesError.message }</p>
                 </div>
               </div>

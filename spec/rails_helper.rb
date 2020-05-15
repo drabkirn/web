@@ -39,7 +39,11 @@ require 'capybara/dsl'
 require 'capybara-screenshot/rspec'
 
 Capybara.register_driver :firefox do |app|
-  Capybara::Selenium::Driver.new(app, browser: :firefox)
+  if ENV["ci_true"]
+    Capybara::Selenium::Driver.new(app, browser: :firefox)
+  else
+    Capybara::Selenium::Driver.new(app, browser: :firefox, profile: "devV13")
+  end
 end
 
 Capybara.server = :puma

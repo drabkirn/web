@@ -33,5 +33,14 @@ module Web
 
     # Handle exceptions the manual way in API-only app
     config.exceptions_app = self.routes
+
+    # Handle CORS for quotes endpoint
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '/quotes', headers: :any, methods: [:get, :options]
+        resource '/quotes/*', headers: :any, methods: [:get, :options]
+      end
+    end
   end
 end
