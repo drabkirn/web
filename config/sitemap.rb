@@ -29,7 +29,6 @@ SitemapGenerator::Sitemap.create do
   add '/newsletter', priority: 0.8
   add '/palace', priority: 0.8
   add '/authna', priority: 0.8
-  add '/desityle', priority: 0.8
   add '/docs', priority: 0.8
   add '/feedka', priority: 0.8
 
@@ -52,4 +51,8 @@ SitemapGenerator::Sitemap.create do
   add legal_credits_path, priority: 0.7
   add legal_cla_path, priority: 0.7
   add legal_privacy_analytics_opt_out_path, priority: 0.7
+
+  ## Desityle
+  add '/desityle/', priority: 0.8
+  add '/desityle/components', priority: 0.8
 end
