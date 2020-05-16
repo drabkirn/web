@@ -22,7 +22,7 @@ feature "Drabkirn Homepage - GET /", js: true do
     expect(page).to have_link('Aditya', href: 'https://cdadityang.xyz')
     expect(page).to have_link('Authna', href: '/authna')
     expect(page).to have_link('Dashboard', href: '/dashboard')
-    expect(page).to have_link('Desityle', href: '/desityle')
+    expect(page).to have_link('Desityle', href: '/desityle/')
     expect(page).to have_link('Docs', href: '/docs')
     expect(page).to have_link('Feedka', href: '/feedka')
     expect(page).to have_link('Quotes', href: '/quotes')
@@ -58,7 +58,7 @@ feature "Drabkirn Homepage - GET /", js: true do
 
   scenario "navigates and shows desityle page" do
     click_on "Desityle"
-    expect(page.current_path).to eq "/desityle"
+    expect(page.current_path).to eq "/desityle/"
   end
 
   scenario "navigates and shows docs page" do

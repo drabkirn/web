@@ -4,7 +4,7 @@
 
 # Drabkirn Web
 
-> This repository serves as our official codebase of our website to showcase our products and services.
+> The codebase for website of Drabkirn and showcase of all of it's apps and services.
 
 <!-- Add languages, CI/CD, main frameworks used from shields.io. Example -->
 [![Ruby 2.7.1](https://img.shields.io/badge/Ruby-v2.7.1-green.svg)](https://www.ruby-lang.org/en/)
@@ -14,12 +14,15 @@
 [![Build Status](https://travis-ci.org/drabkirn/web.svg?branch=master)](https://travis-ci.org/drabkirn/web)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/788fb13d244e41462da4/test_coverage)](https://codeclimate.com/github/drabkirn/web/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/788fb13d244e41462da4/maintainability)](https://codeclimate.com/github/drabkirn/web/maintainability)
+[![Technical Dept](https://img.shields.io/codeclimate/tech-debt/drabkirn/web)](https://codeclimate.com/github/drabkirn/web/trends/technical_debt)
 [![Issues](https://img.shields.io/github/issues/drabkirn/rails_base.svg)](https://github.com/drabkirn/rails_base/issues)
 [![Issues closed](https://img.shields.io/github/issues-closed/drabkirn/rails_base.svg)](https://github.com/drabkirn/rails_base/issues)
 [![Pulls](https://img.shields.io/github/issues-pr/drabkirn/rails_base.svg)](https://github.com/drabkirn/rails_base/pulls)
 [![Pulls](https://img.shields.io/github/issues-pr-closed/drabkirn/rails_base.svg)](https://github.com/drabkirn/rails_base/pulls)
 [![License](https://img.shields.io/github/license/drabkirn/rails_base.svg)](https://choosealicense.com/licenses/agpl-3.0/)
 [![CLA assistant](https://cla-assistant.io/readme/badge/drabkirn/web)](https://cla-assistant.io/drabkirn/web)
+[![Dependabot](https://badgen.net/dependabot/drabkirn/web?icon=dependabot)]()
+[![Code size](https://img.shields.io/github/languages/code-size/drabkirn/web)]()
 
 **[Visit our website](https://go.cdadityang.xyz/drab)**
 
