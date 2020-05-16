@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import MainHeader from '../Shared/MainHeader';
 import Footer from '../Shared/Footer';
 
+import GitHubIcon100x100 from 'images/icons/social/if-github-100x100.svg';
+import TwitterIcon100x100 from 'images/icons/social/if-twitter-100x100.svg';
+import InstaIcon100x100 from 'images/icons/social/if-instagram-100x100.svg';
+import DiscordIcon100x100 from 'images/icons/social/official-discord.svg';
+
 function Palace() {
   return (
     <React.Fragment>
@@ -69,10 +74,10 @@ function Palace() {
           <h2 className="mb-5">Social:</h2>
           <p className="italic fs-1">You may want to connect with us or collaborate or want to say us a sweet Hi, here's how you can do it:</p>
           <div className="drabkirn-social-icons align-center mt-30">
-            <a href="https://twitter.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-twitter-100x100.svg" alt="twitter-icon" /></a>
-            <a href="https://www.instagram.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-instagram-100x100.svg" alt="insta-icon" /></a>
-            <a href="https://github.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-github-100x100.svg" alt="github-icon" /></a>
-            <a href="https://discordapp.com/invite/wFPtMUY" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src="/content/icons/official-discord.svg" width="100px" height="100px" alt="discord-icon" /></a>
+            <a href="https://twitter.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src={ TwitterIcon100x100 } alt="twitter-icon" /></a>
+            <a href="https://www.instagram.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src={ InstaIcon100x100 } alt="insta-icon" /></a>
+            <a href="https://github.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src={ GitHubIcon100x100 } alt="github-icon" /></a>
+            <a href="https://discordapp.com/invite/wFPtMUY" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src={ DiscordIcon100x100 } width="100px" height="100px" alt="discord-icon" /></a>
           </div>
         </div>
       </section>

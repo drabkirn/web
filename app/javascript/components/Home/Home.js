@@ -4,6 +4,14 @@ import { Link } from "react-router-dom";
 import MainHeader from '../Shared/MainHeader';
 import Footer from '../Shared/Footer';
 
+import MissionImage180x180 from 'images/if-mission-180x180.svg';
+import VisionImage180x180 from 'images/if-vision-180x180.svg';
+import BlogIcon100x100 from 'images/icons/social/if-blog-100x100.svg';
+import GitHubIcon100x100 from 'images/icons/social/if-github-100x100.svg';
+import TwitterIcon100x100 from 'images/icons/social/if-twitter-100x100.svg';
+import InstaIcon100x100 from 'images/icons/social/if-instagram-100x100.svg';
+import DiscordIcon100x100 from 'images/icons/social/official-discord.svg';
+
 function Home() {
   return (
     <React.Fragment>
@@ -14,7 +22,7 @@ function Home() {
         <div>
           <div className="row align-center-flex-vh">
             <div className="col-dsk-4 col-mob-12 align-center-on-mob-only">
-              <img src="/content/icons/if-mission-180x180.svg" alt="mission-image" className="light-grey-bg" />
+              <img src={ MissionImage180x180 } alt="mission-image" className="light-grey-bg" />
             </div>
 
             <div className="col-dsk-8 col-mob-12 mt-15-on-mob-only">
@@ -30,7 +38,7 @@ function Home() {
         <div>
           <div className="row align-center-flex-vh">
             <div className="col-dsk-4 col-mob-12 align-center-on-mob-only">
-              <img src="/content/icons/if-vision-180x180.svg" alt="vision-image" className="light-grey-bg vision-image" />
+              <img src={ VisionImage180x180 } alt="vision-image" className="light-grey-bg vision-image" />
             </div>
 
             <div className="col-dsk-8 col-mob-12 mt-15-on-mob-only">
@@ -68,11 +76,11 @@ function Home() {
         </div>
 
         <div className="align-center mt-30">
-          <a href="https://blog.cdadityang.xyz" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-blog-100x100.svg" alt="blog-icon" /></a>
-          <a href="https://github.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-github-100x100.svg" alt="github-icon" /></a>
-          <a href="https://twitter.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-twitter-100x100.svg" alt="twitter-icon" /></a>
-          <a href="https://www.instagram.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-instagram-100x100.svg" alt="insta-icon" /></a>
-          <a href="https://discordapp.com/invite/wFPtMUY" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src="/content/icons/official-discord.svg" width="100px" height="100px" alt="discord-icon" /></a>
+          <a href="https://blog.cdadityang.xyz" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src={ BlogIcon100x100 } alt="blog-icon" /></a>
+          <a href="https://github.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src={ GitHubIcon100x100 } alt="github-icon" /></a>
+          <a href="https://twitter.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src={ TwitterIcon100x100 } alt="twitter-icon" /></a>
+          <a href="https://www.instagram.com/drabkirn" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src={ InstaIcon100x100 } alt="insta-icon" /></a>
+          <a href="https://discordapp.com/invite/wFPtMUY" className="a-image mr-20" target="_blank" rel="noopener noreferrer"><img src={ DiscordIcon100x100 } width="100px" height="100px" alt="discord-icon" /></a>
         </div>
       </section>
 

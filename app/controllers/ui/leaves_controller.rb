@@ -6,4 +6,7 @@ class Ui::LeavesController < ApplicationController
 
   def dashboard
   end
+
+  def manifest
+  end
 end

@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 
 import { DRABKRIN_QUOTES_BASE_URL } from '../Shared/Defaults';
 
+import TwitterIcon100x100 from 'images/icons/social/if-twitter-100x100.svg';
+import WhatsAppIcon100x100 from 'images/icons/social/if-whatsapp-100x100.svg';
+import FacebookIcon100x100 from 'images/icons/social/if-facebook-100x100.svg';
+import LinkedInIcon100x100 from 'images/icons/social/if-linkedin-100x100.svg';
+
 function QuoteCard(props) {
   const twitterCharLimit = 220;
   const twitterTruncatedText = textTruncate(props.quoteContent, twitterCharLimit);
@@ -26,10 +31,10 @@ function QuoteCard(props) {
           </div>
 
           <div className="card-footer align-center pt-10 quotes-card-footer">
-            <a className="a-image ml-5" href={ twitterShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-twitter-100x100.svg" alt="twtr-share-icon" /></a>
-            <a className="a-image ml-5" href={ whatsAppShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-whatsapp-100x100.svg" alt="wapp-share-icon" /></a>
-            <a className="a-image ml-5" href={ facebookShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-facebook-100x100.svg" alt="fb-share-icon" /></a>
-            <a className="a-image ml-5" href={ linkedinShareURL } target="_blank" rel="noopener noreferrer"><img src="/content/icons/if-linkedin-100x100.svg" alt="linkedin-share-icon" /></a>
+            <a className="a-image ml-15" href={ twitterShareURL } target="_blank" rel="noopener noreferrer"><img src={ TwitterIcon100x100 } alt="twtr-share-icon" /></a>
+            <a className="a-image ml-15" href={ whatsAppShareURL } target="_blank" rel="noopener noreferrer"><img src={ WhatsAppIcon100x100 } alt="wapp-share-icon" /></a>
+            <a className="a-image ml-15" href={ facebookShareURL } target="_blank" rel="noopener noreferrer"><img src={ FacebookIcon100x100 } alt="fb-share-icon" /></a>
+            <a className="a-image ml-15" href={ linkedinShareURL } target="_blank" rel="noopener noreferrer"><img src={ LinkedInIcon100x100 } alt="linkedin-share-icon" /></a>
           </div>
         </div>
       </div>

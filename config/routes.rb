@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   get '/legal/privacy/analytics_opt_out', to: "ui/legal#analytics_opt_out"
   get '/dashboard', to: "ui/leaves#dashboard", as: "dashboard"
   get '/api_managers/new_request', to: "ui/api_managers#new_request", as: "api_managers_new_request"
-  # resources :api_managers, only: [:show]
+  get '/manifest.json', to: "ui/leaves#manifest"
 
   # When making invalid API-only requests, show 404 and 500
   match "/404", to: "application#action_not_found", via: [:all]
