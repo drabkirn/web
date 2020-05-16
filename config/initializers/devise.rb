@@ -311,7 +311,7 @@ Devise.setup do |config|
   config.paranoid = true
   config.lock_strategy = :failed_attempts
   config.unlock_keys = [:email]
-  config.unlock_strategy = :time
+  config.unlock_strategy = :both
   config.maximum_attempts = 5
   config.unlock_in = 3.hour
   config.last_attempt_warning = true

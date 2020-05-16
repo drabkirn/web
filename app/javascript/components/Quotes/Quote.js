@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 import { useSelector, useDispatch } from "react-redux";
 
 import MainHeader from '../Shared/MainHeader';
@@ -11,6 +12,7 @@ import TwitterIcon100x100 from 'images/icons/social/if-twitter-100x100.svg';
 import WhatsAppIcon100x100 from 'images/icons/social/if-whatsapp-100x100.svg';
 import FacebookIcon100x100 from 'images/icons/social/if-facebook-100x100.svg';
 import LinkedInIcon100x100 from 'images/icons/social/if-linkedin-100x100.svg';
+import QuotesOgImage from 'images/og_images/quotes.png';
 
 function Quote(props) {
   const quoteId = parseInt(props.match.params.id);
@@ -59,8 +61,44 @@ function Quote(props) {
     whatsAppShareURL = `https://api.whatsapp.com/send?text=${ allQuotes[quoteId - 1].content }%0A%0A See more at ${DRABKRIN_QUOTES_BASE_URL}`;
   }
 
+  // Meta tags
+  const MetaTitle = `${quoteId}. ${allQuotes && allQuotes[quoteId - 1].title} | Quotes | Drabkirn`;
+  const MetaDescription = `Quote ${quoteId}: ${allQuotes && allQuotes[quoteId - 1].content}`;
+  const MetaKeywords = "drabkirn, drab, quotes, drabkirn quotes, drab quotes, quote, quotes, quotes api, inspire, mindset, life";
+  const MetaAppURL = "https://drabkirn.cdadityang.xyz/quotes";
+  const MetaSiteName = "Quotes";
+
+  const MetaAppURLDefault = "https://drabkirn.cdadityang.xyz";
+
   return (
     <React.Fragment>
+      <Helmet>
+        <title>{ MetaTitle }</title>
+
+        <meta name="description" content={ MetaDescription } />
+        <meta name="keywords" content={ MetaKeywords } />
+
+        {/* Facebook Meta */}
+        <meta property="og:url" content={ MetaAppURL } />
+        <meta property="og:image" content={ MetaAppURLDefault + QuotesOgImage } />
+        <meta property="og:description" content={ MetaDescription } />
+        <meta property="og:title" content={ MetaTitle } />
+        <meta property="og:site_name" content={ MetaSiteName } />
+        <meta property="og:see_also" content={ MetaAppURLDefault } />
+
+        {/* G+ Meta tags */}
+        <meta itemprop="name" content={ MetaTitle } />
+        <meta itemprop="description" content={ MetaDescription } />
+        <meta itemprop="image" content={ MetaAppURLDefault + QuotesOgImage } />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content={ MetaAppURL } />
+        <meta name="twitter:title" content={ MetaTitle } />
+        <meta name="twitter:description" content={ MetaDescription } />
+        <meta name="twitter:image" content={ MetaAppURLDefault + QuotesOgImage } />
+      </Helmet>
+
       <MainHeader hasTag={false} pageName="Quotes" shortDescription="We write thoughts in the form to redefine inspiration in a few words. Change your mindset to achieve more, get inspired, and improve your life along with us." />
 
       <section className="container mt-50" id="quoteShow">

@@ -9,6 +9,6 @@ module ApplicationHelper
   ## We don't want to show navigation bar everywhere
   ## Whitelist here where only to show
   def show_navigation_array
-    ["ui/leaves/dashboard", "devise/confirmations/new", "devise/passwords/new", "devise/passwords/edit", "ui/users/sessions/new", "ui/users/registrations/new", "ui/users/registrations/edit"]
+    ["ui/leaves/dashboard", "devise/confirmations/new", "devise/passwords/new", "devise/passwords/edit", "ui/users/sessions/new", "ui/users/registrations/new", "ui/users/registrations/edit", "devise/unlocks/new"]
   end
 end

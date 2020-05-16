@@ -38,3 +38,7 @@ yarn-debug.log*
 
 # Ignore /desityle folder, we'll build it in own app
 /public/desityle
+
+## Sitemap files
+/public/sitemap.xml
+/public/sitemap.xml.gz

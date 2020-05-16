@@ -15,9 +15,7 @@ feature "Drabkirn Homepage - GET /", js: true do
   scenario "main section content" do
     # Mission + vision images and statements
     expect(page).to have_selector('p.fs-1-6', text: /Our mission is to connect and build a free, open, and privacy-respected open-source world/)
-    expect(page).to have_selector('img[src="/content/icons/if-mission-180x180.svg"]')
     expect(page).to have_selector('p.fs-1-6', text: /Our vision is to empower every person on this planet/)
-    expect(page).to have_selector('img[src="/content/icons/if-vision-180x180.svg"]')
 
     # Navigation buttons + statement
     expect(page).to have_selector('p.fs-1-6', text: /We know our motto, mission, and vision are vague/)
@@ -26,7 +24,7 @@ feature "Drabkirn Homepage - GET /", js: true do
     expect(page).to have_link('Dashboard', href: '/dashboard')
     expect(page).to have_link('Desityle', href: '/desityle')
     expect(page).to have_link('Docs', href: '/docs')
-    expect(page).to have_link('Feedka', href: 'https://feedka.herokuapp.com')
+    expect(page).to have_link('Feedka', href: '/feedka')
     expect(page).to have_link('Quotes', href: '/quotes')
   end
 
@@ -71,6 +69,11 @@ feature "Drabkirn Homepage - GET /", js: true do
   scenario "navigates and shows quotes page" do
     click_on "Quotes"
     expect(page.current_path).to eq "/quotes"
+  end
+
+  scenario "navigates and shows feedka page" do
+    click_on "Feedka"
+    expect(page.current_path).to eq "/feedka"
   end
 
   it_behaves_like "Drabkirn Shared Footer Content"

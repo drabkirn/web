@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import MainHeader from '../Shared/MainHeader';
 import Footer from '../Shared/Footer';
@@ -11,10 +12,45 @@ import GitHubIcon100x100 from 'images/icons/social/if-github-100x100.svg';
 import TwitterIcon100x100 from 'images/icons/social/if-twitter-100x100.svg';
 import InstaIcon100x100 from 'images/icons/social/if-instagram-100x100.svg';
 import DiscordIcon100x100 from 'images/icons/social/official-discord.svg';
+import DrabkirnOgImage from 'images/og_images/drabkirn.png';
 
 function Home() {
+  const MetaTitle = "Drabkirn - Create the world out of the things that you build | Drabkirn";
+  const MetaDescription = "Create the world out of the things that you build. We build those things and will set them free. We also write thoughts and much more.";
+  const MetaKeywords = "drabkirn, privacy, desityle, quotes, quotes api, authna, docs, feedka, cdadityang";
+  const MetaAppURL = "https://drabkirn.cdadityang.xyz";
+  const MetaSiteName = "Drabkirn";
+
+  const MetaAppURLDefault = "https://drabkirn.cdadityang.xyz";
+
   return (
     <React.Fragment>
+      <Helmet>
+        <title>{ MetaTitle }</title>
+
+        <meta name="description" content={ MetaDescription } />
+        <meta name="keywords" content={ MetaKeywords } />
+
+        {/* Facebook Meta */}
+        <meta property="og:url" content={ MetaAppURL } />
+        <meta property="og:image" content={ MetaAppURLDefault + DrabkirnOgImage } />
+        <meta property="og:description" content={ MetaDescription } />
+        <meta property="og:title" content={ MetaTitle } />
+        <meta property="og:site_name" content={ MetaSiteName } />
+        <meta property="og:see_also" content={ MetaAppURLDefault } />
+
+        {/* G+ Meta tags */}
+        <meta itemprop="name" content={ MetaTitle } />
+        <meta itemprop="description" content={ MetaDescription } />
+        <meta itemprop="image" content={ MetaAppURLDefault + DrabkirnOgImage } />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content={ MetaAppURL } />
+        <meta name="twitter:title" content={ MetaTitle } />
+        <meta name="twitter:description" content={ MetaDescription } />
+        <meta name="twitter:image" content={ MetaAppURLDefault + DrabkirnOgImage } />
+      </Helmet>
       
       <MainHeader hasTag={true} tagName="@drabkirn" shortDescription="Create the world out of the things that you build. We build those things and will set them free. We also write thoughts and much more." />
 
@@ -63,7 +99,7 @@ function Home() {
           <a href="/dashboard" className="btn">Dashboard</a>
           <a href="/desityle" className="btn btn-rev">Desityle</a>
           <a href="/docs" className="btn">Docs</a>
-          <a href="https://feedka.herokuapp.com" className="btn btn-rev" target="_blank" rel="noopener noreferrer">Feedka</a>
+          <Link to="/feedka" className="btn">Feedka</Link>
           <Link to="/quotes" className="btn">Quotes</Link>
         </div>
       </section>

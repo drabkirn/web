@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 import { useSelector, useDispatch } from "react-redux";
 import queryString from 'query-string';
 
@@ -8,6 +9,8 @@ import Footer from '../Shared/Footer';
 import Pagination from './Pagination';
 import QuoteCard from './QuoteCard';
 import { fetchAllQuotes } from '../../store/actions/quoteActions';
+
+import QuotesOgImage from 'images/og_images/quotes.png';
 
 function Quotes(props) {
   // Get the Redux state
@@ -73,8 +76,44 @@ function Quotes(props) {
     }
   }
 
+  // Meta tags
+  const MetaTitle = "Quotes - Redefine inspiration in a few words | Drabkirn";
+  const MetaDescription = "We write thoughts in the form to redefine inspiration in a few words. Change your mindset to achieve more, get inspired, and improve your life along with us.";
+  const MetaKeywords = "drabkirn, drab, quotes, drabkirn quotes, drab quotes, quote, quotes, quotes api, inspire, mindset, life";
+  const MetaAppURL = "https://drabkirn.cdadityang.xyz/quotes";
+  const MetaSiteName = "Quotes";
+
+  const MetaAppURLDefault = "https://drabkirn.cdadityang.xyz";
+
   return (
     <React.Fragment>
+      <Helmet>
+        <title>{ MetaTitle }</title>
+
+        <meta name="description" content={ MetaDescription } />
+        <meta name="keywords" content={ MetaKeywords } />
+
+        {/* Facebook Meta */}
+        <meta property="og:url" content={ MetaAppURL } />
+        <meta property="og:image" content={ MetaAppURLDefault + QuotesOgImage } />
+        <meta property="og:description" content={ MetaDescription } />
+        <meta property="og:title" content={ MetaTitle } />
+        <meta property="og:site_name" content={ MetaSiteName } />
+        <meta property="og:see_also" content={ MetaAppURLDefault } />
+
+        {/* G+ Meta tags */}
+        <meta itemprop="name" content={ MetaTitle } />
+        <meta itemprop="description" content={ MetaDescription } />
+        <meta itemprop="image" content={ MetaAppURLDefault + QuotesOgImage } />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content={ MetaAppURL } />
+        <meta name="twitter:title" content={ MetaTitle } />
+        <meta name="twitter:description" content={ MetaDescription } />
+        <meta name="twitter:image" content={ MetaAppURLDefault + QuotesOgImage } />
+      </Helmet>
+
       <MainHeader hasTag={false} pageName="Quotes" shortDescription="We write thoughts in the form to redefine inspiration in a few words. Change your mindset to achieve more, get inspired, and improve your life along with us." />
 
       <section className="container">

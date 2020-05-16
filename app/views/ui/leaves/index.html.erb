@@ -1,1 +1,50 @@
 <div id="root"></div>
+
+<% path_params = params["path"] %>
+<% if path_params.present? %>
+  <% if path_params == "authna" %>
+    <%
+      @meta_title = "Authna - Plug and play user authentication system"
+      @meta_description = "Why re-create user's authentication in every app that you build? You can fire up an Authna server, configure your apps to use Authna, and get your users authenticated. Sweet and simple."
+      @meta_keywords = "drabkirn, drab, authna, drabkirn authna, drab authna, user authentication, authentication"
+      @meta_app_url = "https://drabkirn.cdadityang.xyz/authna"
+      @meta_og_image = asset_url('og_images/authna.png')
+      @meta_site_name = "Authna"
+    %>
+
+  <% elsif path_params == "quotes" or params["path"].split("/")[0] == "quotes" %>
+    <% quote_id = params["path"].split("/")[1].to_i %>
+    <% if quote_id == 0 %>
+      <%
+        @meta_title = "Quotes - Redefine inspiration in a few words"
+        @meta_description = "We write thoughts in the form to redefine inspiration in a few words. Change your mindset to achieve more, get inspired, and improve your life along with us."
+        @meta_keywords = "drabkirn, drab, quotes, drabkirn quotes, drab quotes, quote, quotes, quotes api, inspire, mindset, life"
+        @meta_app_url = "https://drabkirn.cdadityang.xyz/quotes"
+        @meta_og_image = asset_url('og_images/quotes.png')
+        @meta_site_name = "Quotes"
+      %>
+    <% else %>
+      <% if !(quote_id < 0) and !(quote_id > Quote.all.count) %>
+        <%
+          quote = Quote.find(quote_id)
+          @meta_title = quote_id.to_s + ". " + quote.title + " | Quotes"
+          @meta_description = "Quote #{quote_id}: " + quote.content
+          @meta_keywords = "drabkirn, drab, quotes, drabkirn quotes, drab quotes, quote, quotes, quotes api, inspire, mindset, life"
+          @meta_app_url = "https://drabkirn.cdadityang.xyz/quotes"
+          @meta_og_image = asset_url('og_images/quotes.png')
+          @meta_site_name = "Quotes"
+        %>
+      <% end %>
+    <% end %>
+    
+  <% elsif path_params == "feedka" %>
+    <%
+      @meta_title = "Feedka - Get constructive feedback"
+      @meta_description = "Get authentic, kindful, and constructive feedback from your friends, family, and co-workers. It's completely anonymous, safe and secure. Also, free and open-source."
+      @meta_keywords = "drabkirn, drab, feedka, drabkirn feedka, drab feedka, feedback, constructive feedback, drabkirn feedback, honest feedback, anonymous feedback"
+      @meta_app_url = "https://drabkirn.cdadityang.xyz/feedka"
+      @meta_og_image = asset_url('og_images/feedka.png')
+      @meta_site_name = "Feedka"
+    %>
+  <% end %>
+<% end %>

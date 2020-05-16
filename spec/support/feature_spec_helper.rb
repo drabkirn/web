@@ -1,7 +1,6 @@
 shared_examples 'Drabkirn Shared Header Content' do
   scenario "Drabkirn Shared Header Content" do
     expect(page).to have_selector('img[alt="Drabkirn Logo Header"]')
-    expect(page).to have_selector('img[src="/content/images/drabkirn-logo-180x180.png"]')
     expect(page).to have_selector('h1', text: 'Drabkirn')
 
     find('img[alt="Drabkirn Logo Header"]').click

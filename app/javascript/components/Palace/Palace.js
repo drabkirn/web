@@ -32,7 +32,7 @@ function Palace() {
           <div className="align-center mt-20">
             <Link to="/authna" className="btn">Authna</Link>
             <a href="/desityle" className="btn btn-rev">Desityle</a>
-            <a href="https://feedka.herokuapp.com" className="btn" target="_blank" rel="noopener noreferrer">Feedka</a>
+            <Link to="/feedka" className="btn">Feedka</Link>
             <Link to="/quotes" className="btn btn-rev">Quotes</Link>
           </div>
         </div>

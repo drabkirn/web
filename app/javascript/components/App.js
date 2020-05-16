@@ -7,6 +7,7 @@ import Palace from './Palace/Palace';
 import Authna from './Authna/Authna';
 import Quotes from './Quotes/Quotes';
 import Quote from './Quotes/Quote';
+import Feedka from './Feedka/Feedka';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route exact path="/authna" component={ Authna } />
       <Route exact path="/quotes/:id" component={ Quote } />
       <Route exact path="/quotes" component={ Quotes } />
+      <Route exact path="/feedka" component={ Feedka } />
       <Route path="/" component={ Home } />
     </Switch>
   );

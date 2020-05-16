@@ -20,7 +20,7 @@ feature "Palace - GET /palace", js: true do
     expect(page).to have_selector('p.italic.fs-1', text: "Here are some of the great things that we've built:")
     expect(page).to have_link('Authna', href: '/authna')
     expect(page).to have_link('Desityle', href: '/desityle')
-    expect(page).to have_link('Feedka', href: 'https://feedka.herokuapp.com')
+    expect(page).to have_link('Feedka', href: '/feedka')
     expect(page).to have_link('Quotes', href: '/quotes')
 
     # Writings section

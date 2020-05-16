@@ -25,12 +25,12 @@ function Newsletter() {
       <MainHeader hasTag={false} pageName="Newsletter" shortDescription="We had to work a lot on making a free newsletter for you. We shoot you a mail once in a week on everything drabkirn." />
 
       <section className="container mt-50">
-        <div class="align-center">
+        <div className="align-center">
           <h2>Subscribe to our newsletter</h2>
-          <u class="u-gold fs-1-2 italic">You've got nothing to worry about; you can read our <Link to="/legal/privacy_policy">privacy policy</Link> on how we handle your data. TLDR: We won't spam you or sell this data to any third party.</u>
+          <u className="u-gold fs-1-2 italic">You've got nothing to worry about; you can read our <Link to="/legal/privacy_policy">privacy policy</Link> on how we handle your data. TLDR: We won't spam you or sell this data to any third party.</u>
         </div>
 
-        <div class="mt-20 align-center-flex-vh">
+        <div className="mt-20 align-center-flex-vh">
           <form className="form-tag" onSubmit={ (e) => {
                 e.preventDefault();
                 const csrfToken = document.querySelector('[name="csrf-token"]').getAttribute('content');
