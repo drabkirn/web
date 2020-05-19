@@ -55,4 +55,7 @@ SitemapGenerator::Sitemap.create do
   ## Desityle
   add '/desityle/', priority: 0.8
   add '/desityle/components', priority: 0.8
+
+  ## Games
+  add '/games/rock_paper_scissors', priority: 0.8
 end
