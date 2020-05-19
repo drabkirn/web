@@ -32,7 +32,7 @@ function RPS() {
   const [twitterShareURL, setTwitterShareURL] = useState("");
 
   // Sharing the results
-  const RPSGameURL = "https://drabkirn.cdadityang.xyz/games/rock_paper_scissors";
+  const RPSGameURL = "https://go.cdadityang.xyz/grps";
   const userWinMessage = (uPoints, cPoints) => {
     return `I've just defeated DrabkirnBot with ${uPoints}-${cPoints} while playing the Rock-Paper-Scissors game. It was a tough game, but I won it anyway. Can you win this challenge?`;
   };
