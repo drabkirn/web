@@ -46,5 +46,14 @@
       @meta_og_image = asset_url('og_images/feedka.png')
       @meta_site_name = "Feedka"
     %>
+  <% elsif path_params == "games/rock_paper_scissors" %>
+    <%
+      @meta_title = "Rock-Paper-Scissors Game"
+      @meta_description = "Here you go, It's now time for DrabkirnBot to defeat you in the Rock-Paper-Scissors game. The reel challenge begins now."
+      @meta_keywords = "drabkirn, drab, rps, rock paper scissors, drabkirn rps, drabkirn games, drabkirn rock paper scissors game"
+      @meta_app_url = "https://drabkirn.cdadityang.xyz/games/rock_paper_scissors"
+      @meta_og_image = asset_url('og_images/grps.png')
+      @meta_site_name = "RPS Game"
+    %>
   <% end %>
 <% end %>

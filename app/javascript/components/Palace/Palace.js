@@ -42,6 +42,18 @@ function Palace() {
 
       <section className="container">
         <div>
+          <h2 className="mb-5">Games:</h2>
+          <p className="italic fs-1">Here are some of the great games that we've built:</p>
+          <div className="align-center mt-20">
+            <Link to="/games/rock_paper_scissors" className="btn btn-rev">RPS Game</Link>
+          </div>
+        </div>
+      </section>
+
+      <hr className="hr-center" />
+
+      <section className="container">
+        <div>
           <h2 className="mb-5">Writings:</h2>
           <p className="italic fs-1">We maintain a simple blog and documentation that reflects on how we make things work here at drabkirn.</p>
           <div className="align-center mt-20">

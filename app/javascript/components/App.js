@@ -8,6 +8,7 @@ import Authna from './Authna/Authna';
 import Quotes from './Quotes/Quotes';
 import Quote from './Quotes/Quote';
 import Feedka from './Feedka/Feedka';
+import RPS from './Games/RPS';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/quotes/:id" component={ Quote } />
       <Route exact path="/quotes" component={ Quotes } />
       <Route exact path="/feedka" component={ Feedka } />
+      <Route exact path="/games/rock_paper_scissors" component={ RPS } />
       <Route path="/" component={ Home } />
     </Switch>
   );

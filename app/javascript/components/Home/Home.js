@@ -99,8 +99,9 @@ function Home() {
           <a href="/dashboard" className="btn">Dashboard</a>
           <a href="/desityle/" className="btn btn-rev">Desityle</a>
           <a href="/docs" className="btn">Docs</a>
-          <Link to="/feedka" className="btn">Feedka</Link>
+          <Link to="/feedka" className="btn btn-rev">Feedka</Link>
           <Link to="/quotes" className="btn">Quotes</Link>
+          <Link to="/games/rock_paper_scissors" className="btn btn-rev">RPS Game</Link>
         </div>
       </section>
 

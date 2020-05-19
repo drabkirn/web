@@ -23,6 +23,11 @@ feature "Palace - GET /palace", js: true do
     expect(page).to have_link('Feedka', href: '/feedka')
     expect(page).to have_link('Quotes', href: '/quotes')
 
+    # Games section
+    expect(page).to have_selector('h2', text: "Games:")
+    expect(page).to have_selector('p.italic.fs-1', text: "Here are some of the great games that we've built:")
+    expect(page).to have_link('RPS Game', href: '/games/rock_paper_scissors')
+
     # Writings section
     expect(page).to have_selector('h2', text: "Writings:")
     expect(page).to have_selector('p.italic.fs-1', text: "We maintain a simple blog and documentation that reflects on how we make things work here at drabkirn.")

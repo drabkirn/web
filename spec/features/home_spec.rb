@@ -26,6 +26,7 @@ feature "Drabkirn Homepage - GET /", js: true do
     expect(page).to have_link('Docs', href: '/docs')
     expect(page).to have_link('Feedka', href: '/feedka')
     expect(page).to have_link('Quotes', href: '/quotes')
+    expect(page).to have_link('RPS Game', href: '/games/rock_paper_scissors')
   end
 
   scenario "social-connect section" do
@@ -66,14 +67,19 @@ feature "Drabkirn Homepage - GET /", js: true do
     expect(page.current_path).to eq "/docs"
   end
 
+  scenario "navigates and shows feedka page" do
+    click_on "Feedka"
+    expect(page.current_path).to eq "/feedka"
+  end
+
   scenario "navigates and shows quotes page" do
     click_on "Quotes"
     expect(page.current_path).to eq "/quotes"
   end
 
-  scenario "navigates and shows feedka page" do
-    click_on "Feedka"
-    expect(page.current_path).to eq "/feedka"
+  scenario "navigates and shows RPS Game page" do
+    click_on "RPS Game"
+    expect(page.current_path).to eq "/games/rock_paper_scissors"
   end
 
   it_behaves_like "Drabkirn Shared Footer Content"
