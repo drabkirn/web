@@ -19,8 +19,9 @@ feature "Palace - GET /palace", js: true do
     expect(page).to have_selector('h2', text: "Apps:")
     expect(page).to have_selector('p.italic.fs-1', text: "Here are some of the great things that we've built:")
     expect(page).to have_link('Authna', href: '/authna')
-    expect(page).to have_link('Desityle', href: '/desityle/')
+    expect(page).to have_link('Desityle', href: '/desityle/index.html')
     expect(page).to have_link('Feedka', href: '/feedka')
+    expect(page).to have_link('Notga', href: '/notga/index.html')
     expect(page).to have_link('Quotes', href: '/quotes')
 
     # Games section

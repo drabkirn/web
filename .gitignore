@@ -36,8 +36,9 @@ yarn-debug.log*
 # Ignore tests coverage
 /coverage
 
-# Ignore /desityle folder, we'll build it in own app
+# Ignore /desityle, /notga folder, we'll build it in own app
 /public/desityle
+/public/notga
 
 ## Sitemap files
 /public/sitemap.xml

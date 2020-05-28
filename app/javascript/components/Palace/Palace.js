@@ -31,9 +31,10 @@ function Palace() {
           <p className="italic fs-1">Here are some of the great things that we've built:</p>
           <div className="align-center mt-20">
             <Link to="/authna" className="btn">Authna</Link>
-            <a href="/desityle/" className="btn btn-rev">Desityle</a>
+            <a href="/desityle/index.html" className="btn btn-rev">Desityle</a>
             <Link to="/feedka" className="btn">Feedka</Link>
-            <Link to="/quotes" className="btn btn-rev">Quotes</Link>
+            <a href="/notga/index.html" className="btn btn-rev">Notga</a>
+            <Link to="/quotes" className="btn">Quotes</Link>
           </div>
         </div>
       </section>

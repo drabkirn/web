@@ -22,10 +22,11 @@ feature "Drabkirn Homepage - GET /", js: true do
     expect(page).to have_link('Aditya', href: 'https://cdadityang.xyz')
     expect(page).to have_link('Authna', href: '/authna')
     expect(page).to have_link('Dashboard', href: '/dashboard')
-    expect(page).to have_link('Desityle', href: '/desityle/')
+    expect(page).to have_link('Desityle', href: '/desityle/index.html')
     expect(page).to have_link('Docs', href: '/docs')
     expect(page).to have_link('Feedka', href: '/feedka')
     expect(page).to have_link('Quotes', href: '/quotes')
+    expect(page).to have_link('Notga', href: '/notga/index.html')
     expect(page).to have_link('RPS Game', href: '/games/rock_paper_scissors')
   end
 
@@ -59,7 +60,7 @@ feature "Drabkirn Homepage - GET /", js: true do
 
   scenario "navigates and shows desityle page" do
     click_on "Desityle"
-    expect(page.current_path).to eq "/desityle/"
+    expect(page.current_path).to eq "/desityle/index.html"
   end
 
   scenario "navigates and shows docs page" do
@@ -70,6 +71,11 @@ feature "Drabkirn Homepage - GET /", js: true do
   scenario "navigates and shows feedka page" do
     click_on "Feedka"
     expect(page.current_path).to eq "/feedka"
+  end
+
+  scenario "navigates and shows notga page" do
+    click_on "Notga"
+    expect(page.current_path).to eq "/notga/index.html"
   end
 
   scenario "navigates and shows quotes page" do
