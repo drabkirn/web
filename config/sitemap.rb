@@ -53,8 +53,11 @@ SitemapGenerator::Sitemap.create do
   add legal_privacy_analytics_opt_out_path, priority: 0.7
 
   ## Desityle
-  add '/desityle/', priority: 0.8
+  add '/desityle/index.html', priority: 0.8
   add '/desityle/components', priority: 0.8
+
+  ## Notga
+  add '/notga/index.html', priority: 0.8
 
   ## Games
   add '/games/rock_paper_scissors', priority: 0.8
