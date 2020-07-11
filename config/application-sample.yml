@@ -56,6 +56,9 @@ development:
   app_hostname:
   app_port:
 
+  airbrake_project_id:
+  airbrake_project_key:
+
 
 production:
   db_hostname:
@@ -83,3 +86,6 @@ production:
 
   app_hostname:
   app_port:
+
+  airbrake_project_id:
+  airbrake_project_key:
