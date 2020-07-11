@@ -57,9 +57,6 @@ Airbrake.configure do |c|
   # Read more: https://goo.gl/gqQ1xS
   # c.blocklist_keys = Rails.application.config.filter_parameters
 
-  # Host
-  c.host = 'drabkirn.cdadityang.xyz'
-
   # Performance
   c.performance_stats = true
   c.query_stats = true

@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, BrowserRouter } from 'react-router-dom';
-import history from '../includes/history';
+import { BrowserRouter } from 'react-router-dom';
+// import history from '../includes/history';
 // import ScrollToTop from '../includes/scrollToTop';
-import PiwikReactRouter from 'piwik-react-router';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -34,22 +33,16 @@ if(process.env.NODE_ENV === "production"){
   });
 
   try {
-    // Matomo/Piwik Setup
-    const piwik = PiwikReactRouter({
-      url: 'https://analytics.cdadityang.xyz',
-      siteId: 3
-    });
-
     document.addEventListener('DOMContentLoaded', () => {
       const docRoot = document.getElementById('root');
 
       if(docRoot) {
         ReactDOM.render(
           <Provider store={ store }>
-            <Router history={piwik.connectToHistory(history)}>
+            <BrowserRouter>
               {/* <ScrollToTop /> */}
               <App />
-            </Router>
+            </BrowserRouter>
           </Provider>,
           docRoot
         );
