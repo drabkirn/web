@@ -39,6 +39,7 @@ group :development do
   # Custom gems:
   gem 'brakeman', '~> 4.8'
   gem 'bundler-audit', '~> 0.6.1'
+  gem 'letter_opener', '~> 1.7'
 end
 
 # Custom test gems
@@ -61,3 +62,6 @@ gem 'activerecord-session_store', '~> 1.1', '>= 1.1.3'
 gem 'active_model_otp', :git => 'https://github.com/heapsource/active_model_otp.git'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'sitemap_generator', '~> 6.1'
+gem 'exception_notification', git: "https://github.com/cdadityang/exception_notification"
+gem 'slack-notifier', '~> 2.3', '>= 2.3.2'
+gem 'httparty', '~> 0.18.1'

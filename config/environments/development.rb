@@ -64,4 +64,8 @@ Rails.application.configure do
 
   # Devise Mailer
   config.action_mailer.default_url_options = { host: ENV["app_hostname"], port: ENV["app_port"].to_i }
+
+  # Letter opener gem
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
 end

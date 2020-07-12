@@ -56,6 +56,8 @@ development:
   app_hostname:
   app_port:
 
+  discord_exception_webhook:
+
 
 production:
   db_hostname:
@@ -83,3 +85,5 @@ production:
 
   app_hostname:
   app_port:
+
+  discord_exception_webhook:
