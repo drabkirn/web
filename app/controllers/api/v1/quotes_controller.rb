@@ -32,13 +32,7 @@ class Api::V1::QuotesController < ApplicationController
     def require_quotes_token_header
       quotes_token_header = request.headers['QuotesToken'] ? request.headers['QuotesToken'] : nil
       if !quotes_token_header
-        send_response = {
-          status: 401,
-          errors: {
-            message: Message.exception_missing_quotes_token_header
-          }
-        }
-        json_response(send_response, :unauthorized)
+        raise ExceptionHandler::UnauthorizedRequestError, Message.exception_missing_quotes_token_header
         return
       end
     end
@@ -49,13 +43,7 @@ class Api::V1::QuotesController < ApplicationController
       quotes_token_header = request.headers['QuotesToken']
       api_data = ApiManager.validate_scope_secret(current_api_scope, quotes_token_header)
       if !api_data
-        send_response = {
-          status: 401,
-          errors: {
-            message: Message.unauthorized_for_scope(current_api_scope)
-          }
-        }
-        json_response(send_response, :unauthorized)
+        raise ExceptionHandler::UnauthorizedRequestError, Message.unauthorized_for_scope(current_api_scope)
         return
       end
       update_api_data(current_api_scope, api_data)

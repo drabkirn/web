@@ -3,9 +3,9 @@ module ExceptionHandler
   extend ActiveSupport::Concern
   
   # Define custom error subclasses - rescue catches `StandardErrors`
-  class MissingAcceptHeader < StandardError; end
-  class WrongAcceptHeader < StandardError; end
   class InternalServerError < StandardError; end
+  class UnprocessableEntityError < StandardError; end
+  class UnauthorizedRequestError < StandardError; end
 
   included do
     # Define custom handlers
@@ -16,9 +16,11 @@ module ExceptionHandler
     ## For Internal Server ever - 500
     rescue_from ExceptionHandler::InternalServerError, with: :five_zero_zero
 
+    ## For Unprocessable Entity error - 422
+    rescue_from ExceptionHandler::UnprocessableEntityError, with: :unprocessable_entity_request
+
     ## For others auth request - 401 - Unauthorized
-    rescue_from ExceptionHandler::MissingAcceptHeader, with: :unauthorized_request
-    rescue_from ExceptionHandler::WrongAcceptHeader, with: :unauthorized_request
+    rescue_from ExceptionHandler::UnauthorizedRequestError, with: :unauthorized_request
   end
 
   private
@@ -43,6 +45,17 @@ module ExceptionHandler
       }
     }
     json_response(send_response, :not_found)
+  end
+
+  # JSON response with message; Status code 422 - Unprocessable Entity
+  def unprocessable_entity_request(e)
+    send_response = {
+      status: 422,
+      errors: {
+        message: e.message
+      }
+    }
+    json_response(send_response, :unprocessable_entity)
   end
 
   # JSON response with message; Status code 500 - internal server error

@@ -28,6 +28,7 @@ ExceptionNotification.configure do |config|
   # }
 
   # Discord Notification
+  ## Add /slack to default discord webhook
   config.add_notifier :slack, {
     webhook_url: ENV["discord_exception_webhook"]
   }

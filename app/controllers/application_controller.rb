@@ -49,9 +49,9 @@ class ApplicationController < ActionController::Base
         accept_version = "v1"
         required_header_content = "application/drabkirn.web.#{accept_version}"
         if accept_header.present?
-          raise(ExceptionHandler::WrongAcceptHeader, Message.exception_wrong_accept_header) if accept_header != required_header_content
+          raise(ExceptionHandler::UnauthorizedRequestError, Message.exception_wrong_accept_header) if accept_header != required_header_content
         else
-          raise(ExceptionHandler::MissingAcceptHeader, Message.exception_missing_accept_header)
+          raise(ExceptionHandler::UnauthorizedRequestError, Message.exception_missing_accept_header)
         end
       end
     end

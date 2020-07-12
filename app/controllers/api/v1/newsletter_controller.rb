@@ -5,13 +5,7 @@ class Api::V1::NewsletterController < ApplicationController
     subscriber_email = subscriber_params["email"]
 
     if !(subscriber_validation(subscriber_first_name, subscriber_email))
-      send_response = {
-        status: 422,
-        errors: {
-          message: Message.newsletter_invalid_subscriber_info
-        }
-      }
-      json_response(send_response, :unprocessable_entity)
+      raise ExceptionHandler::UnprocessableEntityError, Message.newsletter_invalid_subscriber_info
       return
     end
 
@@ -53,13 +47,7 @@ class Api::V1::NewsletterController < ApplicationController
     response_body = JSON.parse(response.body)
 
     if response_body["errors"]
-      send_response = {
-        status: 422,
-        errors: {
-          message: Message.newsletter_api_error
-        }
-      }
-      json_response(send_response, :unprocessable_entity)
+      raise ExceptionHandler::UnprocessableEntityError, Message.newsletter_api_error
       return
     else
       send_response = {
