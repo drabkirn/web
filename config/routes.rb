@@ -34,6 +34,11 @@ Rails.application.routes.draw do
   get '/dashboard', to: "ui/leaves#dashboard", as: "dashboard"
   get '/api_managers/new_request', to: "ui/api_managers#new_request", as: "api_managers_new_request"
   get '/manifest.json', to: "ui/leaves#manifest"
+  
+  # Exception Tracking
+  authenticate :user, ->(u) { u.admin? } do
+    mount ExceptionTrack::Engine => "/admin/exception_tracking_dash"
+  end
 
   # When making invalid API-only requests, show 404 and 500
   match "/404", to: "application#action_not_found", via: [:all]
