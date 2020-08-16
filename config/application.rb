@@ -34,6 +34,9 @@ module Web
     # Handle exceptions the manual way in API-only app
     config.exceptions_app = self.routes
 
+    # Customize to local timezone - IST
+    config.time_zone = "Mumbai"
+
     # Handle CORS for quotes endpoint
     config.middleware.insert_before 0, Rack::Cors do
       allow do

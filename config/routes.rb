@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       resources :quotes, only: [:index, :show]
       
       post '/newsletter/subscribe', to: "newsletter#subscribe"
+
+      # FE Exception Error
+      resources :feerrors, only: [:create]
     end
   end
 

@@ -6,6 +6,25 @@ module ExceptionHandler
   class InternalServerError < StandardError; end
   class UnprocessableEntityError < StandardError; end
   class UnauthorizedRequestError < StandardError; end
+  class ConsumerError < StandardError
+    def initialize(record, request_env, custom_notify = true)
+      @record = record
+      @request_env = request_env
+      @custom_notify = custom_notify
+    end
+
+    def record
+      @record
+    end
+
+    def request_env
+      @request_env
+    end
+
+    def custom_notify
+      @custom_notify
+    end
+  end
 
   included do
     # Define custom handlers
@@ -21,6 +40,9 @@ module ExceptionHandler
 
     ## For others auth request - 401 - Unauthorized
     rescue_from ExceptionHandler::UnauthorizedRequestError, with: :unauthorized_request
+
+    ## When there is exception in rails or react
+    rescue_from ExceptionHandler::ConsumerError, with: :send_expection_notification
   end
 
   private
@@ -67,5 +89,12 @@ module ExceptionHandler
       }
     }
     json_response(send_response, :internal_server_error)
+  end
+
+  # When there is a consumer exception, send notification
+  def send_expection_notification(e)
+    ExceptionNotifier.notify_exception(e, env: e.request_env, data: { id: e.record.id, message: e.record.title })
+
+    unprocessable_entity_request(ExceptionHandler::UnprocessableEntityError.new(Message.feerror_reported_api_error)) unless e.record.id
   end
 end

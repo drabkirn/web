@@ -10,6 +10,7 @@ import thunk from 'redux-thunk';
 import rootReducer from '../store/reducers/rootReducer';
 
 import App from '../components/App';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 import 'desityle/build/css/desityle.min.css';
 import '../components/scss/custom.scss';
@@ -27,7 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <Provider store={ store }>
         <BrowserRouter>
           {/* <ScrollToTop /> */}
-          <App />
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
         </BrowserRouter>
       </Provider>,
       docRoot

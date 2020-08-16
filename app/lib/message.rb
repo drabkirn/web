@@ -1,6 +1,6 @@
 # Helper class for all custom messages used through the app
 class Message
-  # API Messages
+  # API Messages/Exceptions
   def self.exception_wrong_accept_header
     "Exception: You've included wrong Accept header in your request"
   end
@@ -11,6 +11,10 @@ class Message
 
   def self.unauthorized_for_scope(scope)
     "Error: You're unauthorized for making this request for scope: #{scope}"
+  end
+
+  def self.consumer_exception_raised
+    "Exception: A consumer exception has been raised. Check below for more details."
   end
 
   # Quotes messages
@@ -97,5 +101,14 @@ class Message
 
   def self.two_fa_for_non_omniauth_user(provider)
     "You are using #{provider} to access your account, so you don't need to enable 2FA here because #{provider} have built-in 2FA settings."
+  end
+
+  # FE error messages
+  def self.feerror_reported
+    "This error has been reported successfully, we'll issue a fix soon."
+  end
+
+  def self.feerror_reported_api_error
+    "This error has could not be reported properly. Please consider sending an email to #{ APP_CONSTANTS::DRABKIRN_EMAIL } with all the details immediately."
   end
 end
