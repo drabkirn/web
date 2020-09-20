@@ -96,7 +96,7 @@ jobs:
           name: code-coverage
           path: coverage/
 
-security:
+  security:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
