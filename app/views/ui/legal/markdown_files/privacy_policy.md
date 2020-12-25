@@ -133,6 +133,24 @@ You can always self-host Feedka, whose codebase is accessible at [GitHub](https:
 
 <hr class="hr-center" />
 
+## Botja
+
+Botja is an open-source chatbot application that can do most of the things to make your life easier and faster.
+
+<br />
+
+You can always self-host Botja, whose codebase is accessible at [GitHub](https://github.com/drabkirn/botja "visit botja github website"). Currently Botja is live on [Discord](https://go.cdadityang.xyz/discord "drabkirn discord channel").
+
+<br />
+
+- In case you are here about our hosting of Botja, then you need to know the following details:
+  - (ulsquare) We host our Discord Botja on our own server and this complies with our privacy policy. But the interaction that you have with it on [Discord](https://discord.com "visit discord website") (like chat messages or voice messages) is stored on Discord. So you must see their respective privacy policies on how they process the data.
+  - We host our Botja Alexa Skill on [AWS](https://aws.amazon.com/ "visit AWS website") Lambda (and AWS S3) and also interactions that you have with it on Alexa is also stored and controlled by Alexa(or Amazon). So you must see their respective privacy policies on how they process the data.
+  - For Botja analytics we use Microsoft's [Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview "Azure App Insights Docs"). We use this to understand how you are using Botja and how is the behavior(like statistics, performance etc) of Botja. With this analytics we do not collect or ask any personal information (as described above in this policy). This analytics information is stored on Microsoft Servers. So you must see their respective privacy policies on how they process the data.
+  - Like always the case, we don't sell any data to any 3rd party provider.
+
+<hr class="hr-center" />
+
 ## URL Shortener
 
 Yourls is an open-source URL shortener service. It stands for "Your Own URL Shortener."
