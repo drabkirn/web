@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
-gem 'rails', '~> 6.0.3.3'
+gem 'rails', '~> 6.0.3.5'
 gem 'mysql2', '~> 0.5.3'
 gem 'puma', '~> 4.3'
 gem 'webpacker', '~> 4.2', '>= 4.2.2'
@@ -44,9 +44,9 @@ end
 
 # Custom test gems
 group :test do
-  gem 'capybara', '~> 3.32', '>= 3.32.1'
+  gem 'capybara', '~> 3.35', '>= 3.35.3'
   gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
-  gem 'webdrivers', '~> 4.2'
+  gem 'webdrivers', '~> 4.6'
   gem 'webmock', '~> 3.8', '>= 3.8.3'
   gem 'capybara-screenshot', '~> 1.0', '>= 1.0.24'
 end
