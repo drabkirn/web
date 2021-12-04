@@ -38,7 +38,7 @@ require 'capybara/rspec'
 require 'capybara/dsl'
 require 'capybara-screenshot/rspec'
 
-Capybara.register_driver :firefox do |app|
+Capybara.register_driver :firefox_d do |app|
   profile = Selenium::WebDriver::Firefox::Profile.new
   Capybara::Selenium::Driver.new(app, browser: :firefox, profile: profile)
 end
@@ -47,12 +47,12 @@ Capybara.server = :puma
 Capybara.server_host = '0.0.0.0'
 Capybara.server_port = 3005
 
-Capybara.default_driver = :firefox
-Capybara.javascript_driver = :firefox
+Capybara.default_driver = :firefox_d
+Capybara.javascript_driver = :firefox_d
 Capybara.app_host = 'http://127.0.0.1:3005'
 Capybara.default_max_wait_time = 10
 
-Capybara::Screenshot.register_driver(:firefox) do |driver, path|
+Capybara::Screenshot.register_driver(:firefox_d) do |driver, path|
   driver.browser.save_screenshot(path)
 end
 Capybara.save_path = ENV["capybara_screenshots_path"]
