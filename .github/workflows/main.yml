@@ -32,11 +32,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - name: Install Node and Yarn
+      - name: Setup Node and Yarn
         uses: actions/setup-node@v2
         with:
           node-version: '12.22.7'
           cache: 'yarn'
+        
+      - name: Install Yarn
         run: yarn install
       
       - name: Install Dependencies
