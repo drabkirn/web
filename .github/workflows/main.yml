@@ -37,8 +37,15 @@ jobs:
         with:
           node-version: '12.22.7'
           cache: 'yarn'
+
+      - name: "Cache Yarn"
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
         
       - name: Install Yarn
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install
       
       - name: Install Dependencies
