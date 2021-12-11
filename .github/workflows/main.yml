@@ -2,7 +2,7 @@ name: Web_CI
 
 on:
   push:
-    branches: [ master, gh_actions ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
