@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 concurrency: 
-  group: ${{ GITHUB_REF }}
+  group: ${ GITHUB_REF }
   cancel-in-progress: true
 
 jobs:
