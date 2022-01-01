@@ -21,7 +21,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.1
+          ruby-version: 2.7.5
       
       - name: Setup MYSQL
         uses: mirromutth/mysql-action@v1.1
@@ -111,7 +111,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.1
+          ruby-version: 2.7.5
 
       - name: Install Brakeman
         run: |

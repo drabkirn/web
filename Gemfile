@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.1'
+ruby '2.7.5'
 
-gem 'rails', '~> 6.0.4.1'
+gem 'rails', '~> 6.0.4.4'
 gem 'mysql2', '~> 0.5.3'
 gem 'puma', '~> 4.3'
 gem 'webpacker', '~> 4.2', '>= 4.2.2'
