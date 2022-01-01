@@ -3,6 +3,7 @@ test:
   db_username:
   db_password:
   db_name:
+  db_socket_path:
 
   mailer_default_email_address:
 
@@ -34,6 +35,7 @@ development:
   db_username:
   db_password:
   db_name:
+  db_socket_path:
 
   mailer_default_email_address:
 
@@ -64,6 +66,7 @@ production:
   db_username:
   db_password:
   db_name:
+  db_socket_path:
 
   mailer_default_email_address:
 
