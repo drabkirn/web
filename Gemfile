@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.5'
 
-gem 'rails', '~> 6.0.4.6'
+gem 'rails', '~> 6.1.6.1'
 gem 'mysql2', '~> 0.5.3'
 gem 'puma', '~> 4.3'
 gem 'webpacker', '~> 4.2', '>= 4.2.2'
@@ -38,7 +38,7 @@ group :development do
 
   # Custom gems:
   gem 'brakeman', '~> 4.8'
-  gem 'bundler-audit', '~> 0.6.1'
+  gem 'bundler-audit', '~> 0.9.1'
   gem 'letter_opener', '~> 1.7'
 end
 
