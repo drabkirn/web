@@ -213,6 +213,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.1-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.1-x86_64-linux)
+      racc (~> 1.4)
     oauth (0.5.8)
     oauth2 (1.4.7)
       faraday (>= 0.8, < 2.0)
@@ -245,7 +247,7 @@ GEM
     puma (4.3.11)
       nio4r (~> 2.0)
     racc (1.6.0)
-    rack (2.2.3)
+    rack (2.2.4)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
     rack-proxy (0.7.2)
@@ -384,6 +386,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   active_model_otp!
