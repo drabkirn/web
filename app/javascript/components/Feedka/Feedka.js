@@ -61,7 +61,7 @@ function Feedka() {
           <div className="col-dsk-6 col-mob-12 mb-20">
             <h3 className="align-center">Get Set - Go</h3>
             <p>You start by simply creating an account, you then get a unique URL that you can share with others and boom you're now ready to get feedback from others.</p>
-            <a href="https://feedka.herokuapp.com/users/sign_up" className="green-bg" target="_blank" rel="noopener noreferrer">Get Started Now</a>
+            <a href="https://feedka.cdadityang.xyz/users/sign_up" className="green-bg" target="_blank" rel="noopener noreferrer">Get Started Now</a>
           </div>
         </div>
 
@@ -125,7 +125,7 @@ function Feedka() {
           </div>
           <div className="col-dsk-6 col-mob-12 mb-20">
             <h3 className="align-center">Improved security</h3>
-            <p>All the feedback that you receive is server-side encrypted and then saved to the database. You can also enable Two Factor Authentication(2FA) from <a href="https://feedka.herokuapp.com/users/edit" target="_blank" rel="noopener noreferrer">your settings</a> to add a layer of security to your account.</p>
+            <p>All the feedback that you receive is server-side encrypted and then saved to the database. You can also enable Two Factor Authentication(2FA) from <a href="https://feedka.cdadityang.xyz/users/edit" target="_blank" rel="noopener noreferrer">your settings</a> to add a layer of security to your account.</p>
           </div>
         </div>
 
@@ -155,7 +155,7 @@ function Feedka() {
       <section className="mt-50">
         <div className="align-center">
           <h2 className="mb-40">Give it a try</h2>
-          <a href="https://feedka.herokuapp.com" className="btn btn-wide" target="_blank" rel="noopener noreferrer">Demo</a>
+          <a href="https://feedka.cdadityang.xyz" className="btn btn-wide" target="_blank" rel="noopener noreferrer">Demo</a>
           <br />
           <a href="https://github.com/drabkirn/feedka" className="btn btn-wide" target="_blank" rel="noopener noreferrer">GitHub</a>
           <br />

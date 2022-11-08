@@ -124,11 +124,10 @@ You can always self-host Feedka, whose codebase is accessible at [GitHub](https:
 
 <br />
 
-- In case you are here about our hosting of Feedka at [https://feedka.herokuapp.com](https://feedka.herokuapp.com "visit feedka website"), then you need to know the following details:
-  - (ulsquare) We host our Feedka application at [Heroku](https://www.heroku.com/ "visit heroku website") with [ClearDB MySQL](https://elements.heroku.com/addons/cleardb "visit heroku clear db addon website") and [Heroku Redis](https://elements.heroku.com/addons/heroku-redis "visit heroku redis addon website") Add-ons. So you must see their respective privacy policies on how they process the data.
-  - We use Microsoft's [Azure Content Moderation API](https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/) to flag abuse or PII information. You should read their [policy here](https://azure.microsoft.com/en-in/support/legal/cognitive-services-compliance-and-privacy/). Don't worry, we believe the feedback that you send is irrelative to Microsoft.
+- In case you are here about our hosting of Feedka at [https://feedka.cdadityang.xyz](https://feedka.cdadityang.xyz "visit feedka website"), then you need to know the following details:
+  - (ulsquare) We use Microsoft's [Azure Content Moderation API](https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/) to flag abuse or PII information. You should read their [policy here](https://azure.microsoft.com/en-in/support/legal/cognitive-services-compliance-and-privacy/). Don't worry, we believe the feedback that you send is irrelative to Microsoft.
   - Additionally, we take your username to ensure your feedback profile gets a unique link.
-  - When you choose to submit any kind of [report](https://feedka.herokuapp.com/r/cdadityang "submit a report to feedka") through Feedka, you give us consent to look over the contents of your report.
+  - When you choose to submit any kind of [report](https://feedka.cdadityang.xyz/r/cdadityang "submit a report to feedka") through Feedka, you give us consent to look over the contents of your report.
   - We don't use any accessible Feedka data for marketing purposes. Like always the case, we don't sell any data to any 3rd party provider.
 
 <hr class="hr-center" />

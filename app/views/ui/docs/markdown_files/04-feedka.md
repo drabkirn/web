@@ -7,7 +7,7 @@
 <span id="feedka-usage"></span>
 
 ## Usage
-If you want to test the waters first, then you can visit the [Feedka website](https://feedka.herokuapp.com, "visit feedka website") and see it in working.
+If you want to test the waters first, then you can visit the [Feedka website](https://feedka.cdadityang.xyz "visit feedka website") and see it in working.
 
 <br />
 
