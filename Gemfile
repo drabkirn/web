@@ -64,5 +64,5 @@ gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'sitemap_generator', '~> 6.1'
 gem 'exception_notification', git: "https://github.com/cdadityang/exception_notification"
 gem 'slack-notifier', '~> 2.3', '>= 2.3.2'
-gem 'httparty', '~> 0.18.1'
+gem 'httparty', '~> 0.21.0'
 gem 'exception-track', git: "https://github.com/cdadityang/exception-track"
