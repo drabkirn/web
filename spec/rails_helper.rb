@@ -24,7 +24,8 @@ allowed_list = ['github.com', 'amazonaws.com', 'githubusercontent.com']
 allowed_sites = lambda{|uri|
   allowed_list.any? { |site| uri.host.include?(site) }
 }
-WebMock.disable_net_connect!(allow_localhost: true, allow: allowed_sites)
+# WebMock.disable_net_connect!(allow_localhost: true, allow: allowed_sites)
+WebMock.allow_new_connect!
 
 # DB Cleaner
 require 'database_cleaner'
