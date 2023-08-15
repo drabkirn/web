@@ -20,6 +20,11 @@ require 'rspec/rails'
 
 # Webmock API, Initialize + disallow making internet requests
 require 'webmock/rspec'
+allowed_list = ['github.com', 'amazonaws.com', 'githubusercontent.com']
+allowed_sites = lambda{|uri|
+  allowed_list.any? { |site| uri.host.include?(site) }
+}
+WebMock.disable_net_connect!(allow_localhost: true, allow: allowed_sites)
 WebMock.disable_net_connect!(allow_localhost: true, allow: ['github.com', 'github-production-release-asset-2e65be.s3.amazonaws.com', 'objects.githubusercontent.com'])
 
 # DB Cleaner
