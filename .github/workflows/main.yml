@@ -122,7 +122,7 @@ jobs:
           brakeman -f json > tmp/brakeman.json || exit 0
 
       - name: Brakeman Report
-        uses: wtom/brakeman-linter-action@v1.0.1
+        uses: cdadityang/brakeman-linter-action@v1.0.1
         env:
           REPORT_PATH: tmp/brakeman.json
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
