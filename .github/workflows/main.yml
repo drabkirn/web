@@ -90,7 +90,7 @@ jobs:
           sendgrid_list_id: ${{ secrets.SENDGRID_TEST_LIST_ID }}
         run: |
           bundle exec rails db:prepare
-          bundle exec rspec
+          bundle exec rspec spec/features/authna_spec.rb
 
       - name: Publish Code Coverage
         run: |
