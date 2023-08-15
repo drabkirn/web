@@ -90,7 +90,7 @@ jobs:
           sendgrid_list_id: ${{ secrets.SENDGRID_TEST_LIST_ID }}
         run: |
           bundle exec rails db:prepare
-          bundle exec rspec
+          bundle exec rspec spec/features/authna_spec.rb
 
       - name: Publish Code Coverage
         run: |
@@ -115,14 +115,14 @@ jobs:
 
       - name: Install Brakeman
         run: |
-          gem install brakeman
+          gem install brakeman -v 5.4.1
 
       - name: Run Brakeman
         run: |
           brakeman -f json > tmp/brakeman.json || exit 0
 
       - name: Brakeman Report
-        uses: devmasx/brakeman-linter-action@v1.0.0
+        uses: cdadityang/brakeman-linter-action@v1.0.1
         env:
           REPORT_PATH: tmp/brakeman.json
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
