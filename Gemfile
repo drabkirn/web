@@ -5,7 +5,7 @@ ruby '2.7.5'
 
 gem 'rails', '~> 6.1.6.1'
 gem 'mysql2', '~> 0.5.3'
-gem 'puma', '~> 4.3'
+gem 'puma', '~> 5.6'
 gem 'webpacker', '~> 4.2', '>= 4.2.2'
 gem 'jbuilder', '~> 2.10'
 gem 'bootsnap', '~> 1.4', '>= 1.4.6', require: false
